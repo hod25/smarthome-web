@@ -1,0 +1,28 @@
+{
+  "navbar": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "services": {
+    "title": "Our Services",
+    "lighting": {
+      "title": "Smart Lighting",
+      "desc": "Smart control of all home lighting, including scenarios, dimming, and automatic scheduling."
+    },
+    "climate": {
+      "title": "Climate Control",
+      "desc": "Central control of air conditioners, thermostats, and blinds for comfort and savings."
+    },
+    "security": {
+      "title": "Security & Safety",
+      "desc": "Alarm systems, cameras, sensors, and alerts directly to your phone."
+    }
+  },
+  "hero": {
+    "cta": "Free Consultation Call"
+  },
+  "title": "Your Home, But Smart",
+  "subtitle": "Control, comfort, and safety – all at the touch of a button"
+}
