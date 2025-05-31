@@ -1,0 +1,41 @@
+{
+  "navbar": {
+    "home": "Startseite",
+    "services": "Dienstleistungen",
+    "projects": "Projekte",
+    "contact": "Kontakt"
+  },
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "lighting": {
+      "title": "Intelligente Beleuchtung",
+      "desc": "Intelligente Steuerung aller Beleuchtungen im Haus, inklusive Szenarien, Dimmen und automatischer Zeitplanung."
+    },
+    "climate": {
+      "title": "Klima & Steuerung",
+      "desc": "Zentrale Steuerung von Klimaanlagen, Thermostaten und Jalousien für Komfort und Einsparungen."
+    },
+    "security": {
+      "title": "Sicherheit & Schutz",
+      "desc": "Alarmsysteme, Kameras, Sensoren und Benachrichtigungen direkt auf Ihr Handy."
+    }
+  },
+  "hero": {
+    "cta": "Kostenloses Beratungsgespräch"
+  },
+  "title": "Ihr Zuhause, aber smart",
+  "subtitle": "Steuerung, Komfort und Sicherheit – alles auf Knopfdruck",
+  "projects": {
+    "title": "Unsere Projekte",
+    "desc1": "Beschreibung von Projekt 1",
+    "desc2": "Beschreibung von Projekt 2",
+    "desc3": "Beschreibung von Projekt 3"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send": "Nachricht senden"
+  }
+}

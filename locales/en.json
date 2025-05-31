@@ -24,5 +24,18 @@
     "cta": "Free Consultation Call"
   },
   "title": "Your Home, But Smart",
-  "subtitle": "Control, comfort, and safety – all at the touch of a button"
+  "subtitle": "Control, comfort, and safety – all at the touch of a button",
+  "projects": {
+    "title": "Our Projects",
+    "desc1": "Description of Project 1",
+    "desc2": "Description of Project 2",
+    "desc3": "Description of Project 3"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message"
+  }
 }

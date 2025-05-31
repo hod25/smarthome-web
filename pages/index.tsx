@@ -1,5 +1,6 @@
 import { GetStaticPropsContext } from 'next';
 import { useTranslations } from 'next-intl';
+import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Services from '../components/Services';
 import Projects from '../components/Projects';
@@ -11,6 +12,9 @@ const Home = () => {
 
   return (
     <div dir="rtl">
+      <Head>
+        <link rel="icon" href="/Logo.png" />
+      </Head>
       <Navbar />
       <main className="relative h-screen w-screen overflow-hidden">
         <LanguageSwitcher />

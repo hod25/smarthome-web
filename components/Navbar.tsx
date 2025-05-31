@@ -10,16 +10,15 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bg-blue-500 text-white p-4 fixed w-full z-10 top-0 shadow">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-3 rtl:flex-row-reverse">
+        <Link href="/" className="flex items-center rtl:flex-row-reverse">
           <Image
-            src="/smarthome-logo.png"
+            src="/Logo.png"
             alt="SmartHome Logo"
-            width={40}
-            height={40}
-            className="object-contain"
+            width={64}
+            height={64}
+            className="object-contain drop-shadow-lg"
             priority
           />
-          <span className="text-2xl font-bold">SmartHome</span>
         </Link>
         <ul className="flex space-x-8 rtl:space-x-reverse text-lg">
           <li><Link href="/">{t('home')}</Link></li>
@@ -33,6 +32,9 @@ const Navbar: React.FC = () => {
           </Link>
           <Link href={asPath} locale="en">
             <button className={`px-2 py-1 rounded ${locale === 'en' ? 'bg-white text-blue-700' : 'bg-blue-700 text-white border'}`}>English</button>
+          </Link>
+          <Link href={asPath} locale="de">
+            <button className={`px-2 py-1 rounded ${locale === 'de' ? 'bg-white text-blue-700' : 'bg-blue-700 text-white border'}`}>Deutsch</button>
           </Link>
         </div>
       </div>
