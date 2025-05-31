@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div dir="rtl">
       <Head>
-        <link rel="icon" href="/Logo.png" />
+        <link rel="icon" href="/smarthome.png" />
       </Head>
       <Navbar />
       <main className="relative h-screen w-screen overflow-hidden">

@@ -2,17 +2,24 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 const Navbar: React.FC = () => {
   const t = useTranslations('navbar');
   const { locale, asPath } = useRouter();
+  const [open, setOpen] = useState(false);
+  const languages = [
+    { code: 'he', label: 'עברית' },
+    { code: 'en', label: 'English' },
+    { code: 'de', label: 'Deutsch' }
+  ];
 
   return (
     <nav className="bg-blue-500 text-white p-4 fixed w-full z-10 top-0 shadow">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="flex items-center rtl:flex-row-reverse">
           <Image
-            src="/Logo.png"
+            src="/smarthome.png"
             alt="SmartHome Logo"
             width={64}
             height={64}
@@ -21,21 +28,45 @@ const Navbar: React.FC = () => {
           />
         </Link>
         <ul className="flex space-x-8 rtl:space-x-reverse text-lg">
-          <li><Link href="/">{t('home')}</Link></li>
-          <li><Link href="#services">{t('services')}</Link></li>
-          <li><Link href="#projects">{t('projects')}</Link></li>
-          <li><Link href="#contact">{t('contact')}</Link></li>
+          <li><Link href="/" className="transition-colors duration-150 hover:text-blue-300 hover:underline">{t('home')}</Link></li>
+          <li><Link href="#services" className="transition-colors duration-150 hover:text-blue-300 hover:underline">{t('services')}</Link></li>
+          <li><Link href="#projects" className="transition-colors duration-150 hover:text-blue-300 hover:underline">{t('projects')}</Link></li>
+          <li><Link href="#contact" className="transition-colors duration-150 hover:text-blue-300 hover:underline">{t('contact')}</Link></li>
         </ul>
-        <div className="flex gap-2">
-          <Link href={asPath} locale="he">
-            <button className={`px-2 py-1 rounded ${locale === 'he' ? 'bg-white text-blue-700' : 'bg-blue-700 text-white border'}`}>עברית</button>
-          </Link>
-          <Link href={asPath} locale="en">
-            <button className={`px-2 py-1 rounded ${locale === 'en' ? 'bg-white text-blue-700' : 'bg-blue-700 text-white border'}`}>English</button>
-          </Link>
-          <Link href={asPath} locale="de">
-            <button className={`px-2 py-1 rounded ${locale === 'de' ? 'bg-white text-blue-700' : 'bg-blue-700 text-white border'}`}>Deutsch</button>
-          </Link>
+        <div className="relative z-50">
+          <button
+            type="button"
+            className="flex items-center gap-1 px-3 py-1 rounded-full bg-white text-blue-700 border border-blue-200 shadow text-sm font-semibold hover:bg-blue-100 hover:text-blue-900 transition"
+            onClick={() => setOpen((v) => !v)}
+            aria-haspopup="listbox"
+            aria-expanded={open}
+            tabIndex={0}
+          >
+            <span>{languages.find(l => l.code === locale)?.label || 'Language'}</span>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          {open && (
+            <ul className="absolute left-1/2 -translate-x-1/2 top-10 w-32 bg-white border border-blue-200 rounded-lg shadow-lg z-50 max-h-60 overflow-auto select-none" role="listbox">
+              {languages.map(lang => (
+                <li key={lang.code} className="">
+                  <button
+                    type="button"
+                    className={`w-full text-left block px-4 py-2 text-sm rounded-lg transition-colors duration-150 ${locale === lang.code ? 'font-bold text-blue-700 bg-blue-100' : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'}`}
+                    onClick={() => {
+                      setOpen(false);
+                      if (locale !== lang.code) {
+                        window.location.href = `/${lang.code}${asPath.startsWith('/') ? asPath : '/' + asPath}`;
+                      }
+                    }}
+                    role="option"
+                    aria-selected={locale === lang.code}
+                  >
+                    {lang.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </nav>
