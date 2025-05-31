@@ -1,0 +1,43 @@
+# Node modules
+node_modules/
+
+# Build output
+.next/
+out/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Mac system files
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Coverage (for tests)
+coverage/
+
+# Dependency directories
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Optional Next.js export
+export/
+
+# Custom uploads or local public files (if you want to ignore them)
+public/uploads/
+public/tmp/
+
+# Local type-check cache
+.turbo/
