@@ -87,7 +87,10 @@ const Plans: FC = () => {
                   <li key={idx} className="leading-relaxed">{feature}</li>
                 ))}
               </ul>
-              <button className="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-xl shadow-lg transition text-lg w-full">
+              <button
+                className="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-xl shadow-lg transition text-lg w-full"
+                onClick={() => window.location.href = '#contact'}
+              >
                 {t('choose')}
               </button>
             </div>

@@ -3,7 +3,8 @@
     "home": "Home",
     "services": "Services",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "plans": "Plans"
   },
   "services": {
     "title": "Our Services",
