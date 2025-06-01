@@ -6,6 +6,7 @@ import Services from '../components/Services';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import LanguageSwitcher from '../components/LanguageSwitcher';
+import Plans from '../components/plans';
 
 const Home = () => {
   const t = useTranslations();
@@ -30,7 +31,8 @@ const Home = () => {
         </div>
       </main>
       <Services />
-      <Projects />
+      <Plans />
+      {/* <Projects /> */}
       <Contact />
     </div>
   );

@@ -15,19 +15,19 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className="bg-blue-500 text-white p-4 fixed w-full z-10 top-0 shadow">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="bg-blue-500 text-white py-2 px-4 fixed w-full z-10 top-0 shadow text-base">
+      <div className="container mx-auto flex justify-between items-center min-h-0 h-14">
         <Link href="/" className="flex items-center rtl:flex-row-reverse">
           <Image
             src="/smarthome.png"
             alt="SmartHome Logo"
-            width={64}
-            height={64}
+            width={44}
+            height={44}
             className="object-contain drop-shadow-lg"
             priority
           />
         </Link>
-        <ul className="flex space-x-8 rtl:space-x-reverse text-lg">
+        <ul className="flex space-x-6 rtl:space-x-reverse text-base">
           <li><Link href="/" className="transition-colors duration-150 hover:text-blue-300 hover:underline">{t('home')}</Link></li>
           <li><Link href="#services" className="transition-colors duration-150 hover:text-blue-300 hover:underline">{t('services')}</Link></li>
           <li><Link href="#projects" className="transition-colors duration-150 hover:text-blue-300 hover:underline">{t('projects')}</Link></li>

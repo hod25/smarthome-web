@@ -37,5 +37,53 @@
     "email": "E-Mail",
     "message": "Nachricht",
     "send": "Nachricht senden"
+  },
+  "plans": {
+    "title": "Smart-Home-Tarife",
+    "basic": {
+      "title": "Minimale smarte Steuerung",
+      "price": "₪6.500 – ₪7.500",
+      "features": [
+        "Home Assistant auf Raspberry Pi inkl. Installation",
+        "8 smarte Lichtschalter (Wohnzimmer, Küche, Flur, Zimmer)",
+        "2 smarte Rollladensteuerungen (Wohnzimmer und Schlafzimmer)",
+        "2 smarte Klimaanlagen-Fernbedienungen (IR)",
+        "3 Tür-/Fenstersensoren",
+        "2 Bewegungsmelder für Durchgang/Sicherheit",
+        "3 Basis-Automationen + Steuerung per Handy"
+      ]
+    },
+    "standard": {
+      "title": "Vollständiges Familien-Smart-Home",
+      "price": "₪12.000 – ₪15.000",
+      "features": [
+        "Home Assistant auf leistungsstarkem Mini-PC",
+        "15 smarte Schalter für vollständige Hausabdeckung",
+        "4 smarte Rollladensteuerungen",
+        "4 Bewegungsmelder (innen und außen)",
+        "6 Öffnungssensoren für Türen und Fenster",
+        "Steuerung von 3 Klimaanlagen über IR",
+        "2 IP-Kameras mit Fernzugriff",
+        "Ein Sprachassistent (Google / Alexa)",
+        "Dashboard angepasst nach Zonen und Benutzern"
+      ]
+    },
+    "premium": {
+      "title": "Das ultimative Smart Home",
+      "price": "₪22.000 – ₪30.000",
+      "features": [
+        "Mini-PC i5 + USV für ein stabiles und robustes System",
+        "20 smarte Schalter inkl. Garten, Wege und Außenbeleuchtung",
+        "6 smarte Rollladensteuerungen mit Kombimodus",
+        "6 Bewegungsmelder innen und außen",
+        "8 Öffnungs-, Überschwemmungs- und Rauchmelder für maximale Sicherheit",
+        "5 IR-Fernbedienungen für Klimaanlagen, Fernseher, Audio",
+        "4 Kameras mit lokaler Aufzeichnung (ohne Cloud-Abhängigkeit)",
+        "2 fest installierte Wandtablets zur smarten Steuerung",
+        "2 Sprachassistenten in verschiedenen Bereichen",
+        "Intelligentes Gegensprechsystem + fortschrittliche Stromüberwachung"
+      ]
+    },
+    "choose": "Tarif wählen"
   }
 }

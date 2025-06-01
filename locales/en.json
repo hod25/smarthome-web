@@ -37,5 +37,53 @@
     "email": "Email",
     "message": "Message",
     "send": "Send Message"
+  },
+  "plans": {
+    "title": "Smart Home Plans",
+    "basic": {
+      "title": "Minimal Smart Control",
+      "price": "₪6,500 – ₪7,500",
+      "features": [
+        "Home Assistant on Raspberry Pi including installation",
+        "8 smart switches for lighting (living room, kitchen, hallway, rooms)",
+        "2 smart shutter controllers (living room and bedroom)",
+        "2 smart AC remotes (IR)",
+        "3 door/window sensors",
+        "2 motion sensors for passage/security",
+        "3 basic automations + phone control"
+      ]
+    },
+    "standard": {
+      "title": "Full Family Smart Home",
+      "price": "₪12,000 – ₪15,000",
+      "features": [
+        "Home Assistant on powerful Mini PC",
+        "15 smart switches for full home coverage",
+        "4 smart shutter controllers",
+        "4 motion sensors (indoor and outdoor)",
+        "6 opening sensors for doors and windows",
+        "Control of 3 ACs via IR",
+        "2 IP cameras with remote access",
+        "One voice assistant (Google / Alexa)",
+        "Dashboard customized by zones and users"
+      ]
+    },
+    "premium": {
+      "title": "The Ultimate Smart Home",
+      "price": "₪22,000 – ₪30,000",
+      "features": [
+        "Mini PC i5 + UPS for stable and robust system",
+        "20 smart switches including garden, paths, and outdoor lighting",
+        "6 smart shutter controllers with combined mode",
+        "6 indoor and outdoor motion sensors",
+        "8 opening, flood, and smoke sensors for maximum security",
+        "5 IR remotes for ACs, TVs, audio",
+        "4 cameras with local recording (no cloud dependency)",
+        "2 wall-mounted tablets for smart control",
+        "2 voice assistants in different zones",
+        "Smart intercom system + advanced power monitoring"
+      ]
+    },
+    "choose": "Choose Plan"
   }
 }
