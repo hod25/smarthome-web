@@ -23,7 +23,7 @@ const Contact: React.FC = () => {
           <form className="space-y-5" onSubmit={handleSubmit} autoComplete="on">
             <div className="flex flex-col md:flex-row gap-4">
               <input type="text" name="name" placeholder={t('name')} required className="flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200" />
-              <input type="tel" name="phone" placeholder={t('phone') || 'טלפון'} required className="flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200" />
+              <input type="tel" name="phone" placeholder={t('phone') || 'טלפון'} required className="flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200 text-right" />
             </div>
             <input type="email" name="email" placeholder={t('email')} className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200" />
             <textarea name="message" placeholder={t('message')} className="w-full p-3 border border-gray-300 rounded-lg h-32 focus:ring-2 focus:ring-blue-200"></textarea>
@@ -31,9 +31,9 @@ const Contact: React.FC = () => {
           </form>
         )}
         <div className="mt-8 text-center text-gray-500 text-sm flex flex-col md:flex-row md:justify-center md:items-center gap-2 md:gap-4">
-          <span className="inline-block order-2 md:order-1">✉️ info@smarthome.co.il</span>
-          <span className="hidden md:inline-block order-3">|</span>
-          <span className="inline-block order-1 md:order-2">📞 050-123-4567</span>
+          <span className="inline-block order-1 md:order-1">✉️ info@smarthome.co.il</span>
+          <span className="hidden md:inline-block order-2">|</span>
+          <span className="inline-block order-2 md:order-3">📞 050-123-4567</span>
         </div>
       </div>
     </section>
