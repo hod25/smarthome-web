@@ -55,6 +55,7 @@ const Plans: FC = () => {
         t('premium.features.4'),
         t('premium.features.5'),
         t('premium.features.6'),
+        t('premium.features.7'),
       ],
     },
   ];
