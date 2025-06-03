@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://smarthome.7112000.xyz/sitemap.xml
