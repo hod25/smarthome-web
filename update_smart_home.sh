@@ -1,32 +1,57 @@
 #!/bin/bash
-# עדכון אתר הבית החכם לגרסה העדכנית מה־Git והעלאה אוטומטית
 
-set -e
+set -e  # עצור אם יש שגיאה כלשהי
 
-REPO_URL="https://github.com/hod25/smarthome-web.git" # שנה לכתובת ה־Git שלך
-PROJECT_DIR="/var/www/smart_home" # שנה לנתיב בו האתר שלך מותקן
-TMP_DIR="/tmp/smart_home_update_$(date +%s)"
+# === הגדרות ===
+REPO_URL="https://github.com/hod25/smarthome-web.git"
+PROJECT_DIR="/var/www/smarthome"  # שנה לנתיב בו האתר מותקן
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+TEMP_DIR="/tmp/smart_home_update_$TIMESTAMP"
 
-# שלב 1: הורדת הגרסה העדכנית מה־Git
-rm -rf "$TMP_DIR"
-git clone "$REPO_URL" "$TMP_DIR"
+echo "📦 Removing temporary directory if it exists..."
+rm -rf "$TEMP_DIR"
 
-# שלב 2: התקנת תלויות
-cd "$TMP_DIR"
-npm ci || npm install
+echo "📥 Cloning from Git repository..."
+git clone "$REPO_URL" "$TEMP_DIR"
 
-# שלב 3: בניית הפרויקט
+echo "📦 Installing npm packages..."
+cd "$TEMP_DIR"
+if [ -f "package-lock.json" ]; then
+    npm ci
+else
+    npm install
+fi
+
+echo "⚙️ Building the project..."
 npm run build
 
-# שלב 4: גיבוי הגרסה הנוכחית
-BACKUP_DIR="${PROJECT_DIR}_backup_$(date +%Y%m%d_%H%M%S)"
-cp -r "$PROJECT_DIR" "$BACKUP_DIR"
+echo "🚚 Replacing old version..."
+cd /
 
-# שלב 5: החלפת הגרסה הישנה בחדשה
-rm -rf "$PROJECT_DIR"
-mv "$TMP_DIR" "$PROJECT_DIR"
+if [[ -n "$PROJECT_DIR" && "$PROJECT_DIR" != "/" && "$PROJECT_DIR" != "$TEMP_DIR" ]]; then
+    # צור את התיקיה אם לא קיימת
+    mkdir -p "$(dirname "$PROJECT_DIR")"
 
-# שלב 6: ניקוי זמני
-rm -rf "$TMP_DIR"
+    # מחק אם יש גרסה קודמת
+    if [ -d "$PROJECT_DIR" ]; then
+        rm -rf "$PROJECT_DIR"
+    fi
 
-echo "האתר עודכן בהצלחה! גיבוי נשמר ב-$BACKUP_DIR"
+    mv "$TEMP_DIR" "$PROJECT_DIR"
+else
+    echo "❌ ERROR: PROJECT_DIR='$PROJECT_DIR' is invalid or unsafe. Aborting."
+    exit 1
+fi
+
+echo "🔁 Starting the service..."
+cd "$PROJECT_DIR"
+
+# אפשרות 1: PM2
+if command -v pm2 &> /dev/null; then
+    pm2 restart smart_home
+else
+    # אפשרות 2: הרצה עם npm
+    npm start &
+fi
+
+echo "✅ Deployment completed successfully."
