@@ -46,16 +46,16 @@ fi
 echo "🔁 Starting the service..."
 cd "$PROJECT_DIR"
 
-#echo "🔁 Restarting or starting service with PM2..."
+echo "🔁 Restarting or starting service with PM2..."
 
 if command -v pm2 &> /dev/null; then
-    # אם האפליקציה כבר קיימת - רק עשה restart
     if pm2 list | grep -q "smart_home"; then
-        pm2 restart smart_home
-    else
-        # אם לא קיימת, תפעיל אותה מחדש
-        pm2 start npm --name "smart_home" -- start
+        echo "♻️ Found existing 'smart_home', restarting it..."
+        pm2 delete smart_home
     fi
+
+    echo "🚀 Starting updated 'smart_home'..."
+    pm2 start npm --name "smart_home" -- start
     pm2 save
 else
     echo "❌ PM2 is not installed. Please install it with: npm install -g pm2"
