@@ -105,9 +105,10 @@ const Home = ({ locale }: { locale?: string }) => {
 
 export default Home;
 
-export async function getStaticProps() {
-  // תמיד להחזיר עברית כברירת מחדל, גם אם נכנסים ל-/en
-  const currentLocale = 'he';
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+  // ברירת מחדל תמיד עברית, אבל אם יש locale (למשל /en או /de) נטען את השפה המתאימה
+  const supportedLocales = ['he', 'en', 'de'];
+  const currentLocale = supportedLocales.includes(locale ?? '') ? locale : 'he';
   return {
     props: {
       messages: (await import(`../locales/${currentLocale}.json`)).default,
