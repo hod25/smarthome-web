@@ -17,16 +17,16 @@ const Home = ({ locale }: { locale?: string }) => {
       <Head>
         {currentLocale === 'he' ? (
           <>
-            <title>בית חכם בירושלים | שליטה קולית, Home Assistant, חשמל חכם | SmartHome</title>
+            <title>הבית החכם שלך | MySmartHome</title>
             <meta name="description" content="התקנת מערכות בית חכם, שליטה קולית, Home Assistant, חשמל חכם, התקנה מקצועית בפריסה ארצית. שליטה מהנייד, אבטחה ונוחות לבית ולעסק." />
             <meta name="keywords" content="בית חכם, Home Assistant, שליטה קולית, חשמל חכם, אוטומציה, אבטחה, שליטה מהנייד, תאורה חכמה, התקנה מקצועית" />
-            <meta property="og:title" content="בית חכם בירושלים | שליטה קולית, Home Assistant, חשמל חכם | SmartHome" />
+            <meta property="og:title" content="הבית החכם שלך | MySmartHome" />
             <meta property="og:description" content="התקנת מערכות בית חכם, שליטה קולית, Home Assistant, חשמל חכם, התקנה מקצועית בפריסה ארצית. שליטה מהנייד, אבטחה ונוחות לבית ולעסק." />
             <meta property="og:image" content="/circle.png" />
             <meta property="og:type" content="website" />
             <meta property="og:locale" content="he_IL" />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content="בית חכם בירושלים | שליטה קולית, Home Assistant, חשמל חכם | SmartHome" />
+            <meta name="twitter:title" content="הבית החכם שלך | MySmartHome" />
             <meta name="twitter:description" content="התקנת מערכות בית חכם, שליטה קולית, Home Assistant, חשמל חכם, התקנה מקצועית בפריסה ארצית." />
             <meta name="twitter:image" content="/circle.png" />
             <link rel="alternate" hrefLang="he" href="https://smarthome.7112000.xyz/" />
@@ -34,16 +34,16 @@ const Home = ({ locale }: { locale?: string }) => {
           </>
         ) : (
           <>
-            <title>Smart Home in Jerusalem | Voice Control, Home Assistant, Smart Electricity | SmartHome</title>
+            <title>Smart Home in Jerusalem | Voice Control, Home Assistant, Smart Electricity | MySmartHome</title>
             <meta name="description" content="Installation of smart home systems, voice control, Home Assistant, smart electricity, professional installation nationwide. Mobile control, security, and convenience for home and business." />
             <meta name="keywords" content="smart home, Home Assistant, voice control, smart electricity, automation, security, mobile control, smart lighting, professional installation" />
-            <meta property="og:title" content="Smart Home in Jerusalem | Voice Control, Home Assistant, Smart Electricity | SmartHome" />
+            <meta property="og:title" content="Smart Home in Jerusalem | Voice Control, Home Assistant, Smart Electricity | MySmartHome" />
             <meta property="og:description" content="Installation of smart home systems, voice control, Home Assistant, smart electricity, professional installation nationwide. Mobile control, security, and convenience for home and business." />
             <meta property="og:image" content="/circle.png" />
             <meta property="og:type" content="website" />
             <meta property="og:locale" content="en_US" />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content="Smart Home in Jerusalem | Voice Control, Home Assistant, Smart Electricity | SmartHome" />
+            <meta name="twitter:title" content="Smart Home in Jerusalem | Voice Control, Home Assistant, Smart Electricity | MySmartHome" />
             <meta name="twitter:description" content="Installation of smart home systems, voice control, Home Assistant, smart electricity, professional installation nationwide." />
             <meta name="twitter:image" content="/circle.png" />
             <link rel="alternate" hrefLang="he" href="https://smarthome.7112000.xyz/" />
@@ -51,8 +51,10 @@ const Home = ({ locale }: { locale?: string }) => {
           </>
         )}
         <link rel="icon" href="/circle.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/circle.png" />
+        <link rel="shortcut icon" href="/circle.png" />
       </Head>
-      <Navbar />
+      <Navbar/>
       {/* HERO SECTION */}
       <section className="relative flex items-center justify-center min-h-[90vh] w-full overflow-hidden bg-gradient-to-br from-blue-100 to-blue-300">
         <div className="absolute inset-0 bg-cover bg-center opacity-60" style={{ backgroundImage: 'url("/kitchen.jpg")' }} />
@@ -79,11 +81,11 @@ const Home = ({ locale }: { locale?: string }) => {
         </div>
       </section>
       {/* PROJECTS SECTION */}
-      <section className="py-20 bg-white" id="projects">
+      {/* <section className="py-20 bg-white" id="projects">
         <div className="container mx-auto">
           <Projects />
         </div>
-      </section>
+      </section> */}
       {/* CONTACT SECTION */}
       <section className="py-20 bg-gradient-to-t from-blue-50 to-white" id="contact">
         <div className="container mx-auto">
@@ -103,8 +105,9 @@ const Home = ({ locale }: { locale?: string }) => {
 
 export default Home;
 
-export async function getStaticProps({ locale }: GetStaticPropsContext) {
-  const currentLocale = locale || 'he';
+export async function getStaticProps() {
+  // תמיד להחזיר עברית כברירת מחדל, גם אם נכנסים ל-/en
+  const currentLocale = 'he';
   return {
     props: {
       messages: (await import(`../locales/${currentLocale}.json`)).default,

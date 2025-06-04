@@ -35,14 +35,14 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto flex justify-between items-center min-h-0 h-14">
         <Link href="/" className="flex items-center gap-2 rtl:flex-row-reverse">
           <Image
-            src="/smarthome.png"
-            alt="SmartHome Logo"
+            src="/circle.png"
+            alt="MySmartHome Logo"
             width={36}
             height={36}
             className="object-contain drop-shadow"
             priority
           />
-          <span className="font-bold text-blue-700 text-lg hidden sm:inline">SmartHome</span>
+          <span className="font-bold text-blue-700 text-lg hidden sm:inline">MySmartHome</span>
         </Link>
         <ul className="flex space-x-4 rtl:space-x-reverse text-base font-medium">
           <li><Link href="/" className="px-2 py-1 rounded hover:bg-blue-50 hover:text-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-200">{t('home')}</Link></li>
