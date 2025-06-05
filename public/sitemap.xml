@@ -6,11 +6,15 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-
+<url>
+  <loc>https://smarthome.7112000.xyz/</loc>
+</url>
 <url>
   <loc>https://smarthome.7112000.xyz/en</loc>
   <lastmod>2025-06-03T16:32:53+00:00</lastmod>
 </url>
-
+<url>
+  <loc>https://smarthome.7112000.xyz/de</loc>
+</url>
 
 </urlset>

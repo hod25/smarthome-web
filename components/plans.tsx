@@ -87,7 +87,18 @@ const Plans: FC = () => {
               <div className="flex-grow" />
               <button
                 className="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-xl shadow-lg transition text-lg w-full"
-                onClick={() => window.location.href = '#contact'}
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.scrollTo({
+                    top: document.getElementById('contact')?.getBoundingClientRect().top! + window.scrollY - 80,
+                    behavior: 'smooth',
+                  });
+                  setTimeout(() => {
+                    const nameInput = document.querySelector('#contact input[name="name"]') as HTMLInputElement;
+                    if (nameInput) nameInput.focus();
+                  }, 700);
+                }}
+                aria-label={t('choose')}
               >
                 {t('choose')}
               </button>

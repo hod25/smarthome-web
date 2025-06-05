@@ -37,7 +37,9 @@
     "name": "Name",
     "email": "E-Mail",
     "message": "Nachricht",
-    "send": "Nachricht senden"
+    "send": "Nachricht senden",
+    "whatsappMessage": "Hallo, ich interessiere mich für ein Smart Home und hätte gerne weitere Informationen",
+    "sendViaWhatsapp": "Per WhatsApp senden"
   },
   "plans": {
     "title": "Smart-Home-Tarife",
