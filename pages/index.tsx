@@ -6,10 +6,39 @@ import Services from '../components/Services';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Plans from '../components/plans';
+import { useEffect } from 'react';
 
 const Home = ({ locale }: { locale?: string }) => {
   const t = useTranslations();
-  const currentLocale = locale || (typeof window !== 'undefined' ? window.location.pathname.startsWith('/en') ? 'en' : 'he' : 'he');
+  // Detect locale by IP (browser) if not set
+  useEffect(() => {
+    if (!locale && typeof window !== 'undefined') {
+      fetch('https://ipapi.co/json/')
+        .then(res => res.json())
+        .then(data => {
+          if (data && data.country_code === 'IL') {
+            // בישראל תמיד עברית, לא מפנה ל-/he אלא טוען עברית ב-root
+            if (window.location.pathname === '/' || window.location.pathname === '') {
+              // כבר ב-root, לא צריך הפניה
+              return;
+            }
+          } else if (data && data.country_code === 'DE') {
+            if (!window.location.pathname.startsWith('/de')) {
+              window.location.href = '/de';
+            }
+          } else {
+            if (!window.location.pathname.startsWith('/en')) {
+              window.location.href = '/en';
+            }
+          }
+        });
+    }
+  }, [locale]);
+
+  // בישראל תמיד עברית ב-root
+  const currentLocale = (typeof window !== 'undefined' && window.location.pathname.startsWith('/en')) ? 'en'
+    : (typeof window !== 'undefined' && window.location.pathname.startsWith('/de')) ? 'de'
+    : 'he';
   const dir = currentLocale === 'he' ? 'rtl' : 'ltr';
   const whatsappMessage = encodeURIComponent(t('whatsappMessage'));
   const whatsappLink = `https://wa.me/972504307411?text=${whatsappMessage}`;
