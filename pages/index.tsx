@@ -49,16 +49,16 @@ const Home = ({ locale }: { locale?: string }) => {
         {currentLocale === 'he' ? (
           <>
             <title>הבית החכם שלך | MySmartHome</title>
-            <meta name="description" content="התקנת מערכות בית חכם, שליטה קולית, Home Assistant, חשמל חכם, התקנה מקצועית בפריסה ארצית. שליטה מהנייד, אבטחה ונוחות לבית ולעסק." />
-            <meta name="keywords" content="בית חכם, Home Assistant, שליטה קולית, חשמל חכם, אוטומציה, אבטחה, שליטה מהנייד, תאורה חכמה, התקנה מקצועית" />
+            <meta name="description" content="התקנת מערכות בית חכם, שליטה קולית, חשמל חכם, התקנה מקצועית בפריסה ארצית. שליטה מהנייד, אבטחה ונוחות לבית ולעסק." />
+            <meta name="keywords" content="בית חכם, שליטה קולית, חשמל חכם, אוטומציה, אבטחה, שליטה מהנייד, תאורה חכמה, התקנה מקצועית" />
             <meta property="og:title" content="הבית החכם שלך | MySmartHome" />
-            <meta property="og:description" content="התקנת מערכות בית חכם, שליטה קולית, Home Assistant, חשמל חכם, התקנה מקצועית בפריסה ארצית. שליטה מהנייד, אבטחה ונוחות לבית ולעסק." />
+            <meta property="og:description" content="התקנת מערכות בית חכם, שליטה קולית, חשמל חכם, התקנה מקצועית בפריסה ארצית. שליטה מהנייד, אבטחה ונוחות לבית ולעסק." />
             <meta property="og:image" content="/circle.png" />
             <meta property="og:type" content="website" />
             <meta property="og:locale" content="he_IL" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content="הבית החכם שלך | MySmartHome" />
-            <meta name="twitter:description" content="התקנת מערכות בית חכם, שליטה קולית, Home Assistant, חשמל חכם, התקנה מקצועית בפריסה ארצית." />
+            <meta name="twitter:description" content="התקנת מערכות בית חכם, שליטה קולית, חשמל חכם, התקנה מקצועית בפריסה ארצית." />
             <meta name="twitter:image" content="/circle.png" />
             <link rel="alternate" hrefLang="he" href="https://smarthome.7112000.xyz/" />
             <link rel="alternate" hrefLang="en" href="https://smarthome.7112000.xyz/en" />
@@ -68,14 +68,14 @@ const Home = ({ locale }: { locale?: string }) => {
             <title>MySmartHome</title>
             <meta name="description" content="Installation of smart home systems, voice control, Home Assistant, smart electricity, professional installation nationwide. Mobile control, security, and convenience for home and business." />
             <meta name="keywords" content="smart home, Home Assistant, voice control, smart electricity, automation, security, mobile control, smart lighting, professional installation" />
-            <meta property="og:title" content="Smart Home in Jerusalem | Voice Control, Home Assistant, Smart Electricity | MySmartHome" />
+            <meta property="og:title" content="Smart Home in Jerusalem | Voice Control, Smart Electricity | MySmartHome" />
             <meta property="og:description" content="Installation of smart home systems, voice control, Home Assistant, smart electricity, professional installation nationwide. Mobile control, security, and convenience for home and business." />
             <meta property="og:image" content="/circle.png" />
             <meta property="og:type" content="website" />
             <meta property="og:locale" content="en_US" />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content="Smart Home in Jerusalem | Voice Control, Home Assistant, Smart Electricity | MySmartHome" />
-            <meta name="twitter:description" content="Installation of smart home systems, voice control, Home Assistant, smart electricity, professional installation nationwide." />
+            <meta name="twitter:title" content="Smart Home in Jerusalem | Voice Control, Smart Electricity | MySmartHome" />
+            <meta name="twitter:description" content="Installation of smart home systems, voice control, smart electricity, professional installation nationwide." />
             <meta name="twitter:image" content="/circle.png" />
             <link rel="alternate" hrefLang="he" href="https://smarthome.7112000.xyz/" />
             <link rel="alternate" hrefLang="en" href="https://smarthome.7112000.xyz/en" />
