@@ -11,6 +11,8 @@ const Home = ({ locale }: { locale?: string }) => {
   const t = useTranslations();
   const currentLocale = locale || (typeof window !== 'undefined' ? window.location.pathname.startsWith('/en') ? 'en' : 'he' : 'he');
   const dir = currentLocale === 'he' ? 'rtl' : 'ltr';
+  const whatsappMessage = encodeURIComponent(t('whatsappMessage'));
+  const whatsappLink = `https://wa.me/972504307411?text=${whatsappMessage}`;
 
   return (
     <div dir={dir} className={`bg-gray-50 min-h-screen ${dir === 'ltr' ? 'text-left' : 'text-right'}`}>
@@ -34,7 +36,7 @@ const Home = ({ locale }: { locale?: string }) => {
           </>
         ) : (
           <>
-            <title>Smart Home in Jerusalem | Voice Control, Home Assistant, Smart Electricity | MySmartHome</title>
+            <title>MySmartHome</title>
             <meta name="description" content="Installation of smart home systems, voice control, Home Assistant, smart electricity, professional installation nationwide. Mobile control, security, and convenience for home and business." />
             <meta name="keywords" content="smart home, Home Assistant, voice control, smart electricity, automation, security, mobile control, smart lighting, professional installation" />
             <meta property="og:title" content="Smart Home in Jerusalem | Voice Control, Home Assistant, Smart Electricity | MySmartHome" />
@@ -62,24 +64,24 @@ const Home = ({ locale }: { locale?: string }) => {
         <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4 py-24">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg text-blue-50">{t('title')}</h1>
           <p className="text-2xl md:text-3xl mb-8 font-medium text-blue-100 drop-shadow">{t('subtitle')}</p>
-          <a href="https://wa.me/972501234567" target="_blank" rel="noopener noreferrer"
-            className="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white font-bold py-3 px-10 rounded-2xl shadow-xl text-xl transition-all duration-200">
-            {t('hero.cta')}
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white font-bold py-3 px-10 rounded-2xl shadow-xl text-xl transition-all duration-200"
+          >
+            {t('sendViaWhatsapp') || 'שלח בוואטסאפ'}
           </a>
         </div>
       </section>
       {/* SERVICES SECTION */}
-      <section className="py-20 bg-white pb-0">
         <div className="container mx-auto">
           <Services />
         </div>
-      </section>
       {/* PLANS SECTION */}
-      <section className="py-20 pt-10 bg-gradient-to-b from-blue-50 to-white" id="plans">
         <div className="container mx-auto">
           <Plans />
         </div>
-      </section>
       {/* PROJECTS SECTION */}
       {/* <section className="py-20 bg-white" id="projects">
         <div className="container mx-auto">
@@ -87,14 +89,12 @@ const Home = ({ locale }: { locale?: string }) => {
         </div>
       </section> */}
       {/* CONTACT SECTION */}
-      <section className="py-20 bg-gradient-to-t from-blue-50 to-white" id="contact">
         <div className="container mx-auto">
           <Contact />
         </div>
-      </section>
       {/* FOOTER */}
-      <footer className="bg-blue-900 text-blue-100 py-8 text-center text-sm mt-10">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <footer className="bg-blue-900 text-blue-100 py-1 text-center text-sm mt-4">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
           <span>&copy; {new Date().getFullYear()} SmartHome. כל הזכויות שמורות.</span>
           <span>עיצוב ופיתוח: SmartHome Team</span>
         </div>

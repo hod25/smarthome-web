@@ -4,7 +4,7 @@ set -e  # עצור אם יש שגיאה כלשהי
 
 # === הגדרות ===
 REPO_URL="https://github.com/hod25/smarthome-web.git"
-PROJECT_DIR="/var/www/smarthome"  # שנה לנתיב בו האתר מותקן
+PROJECT_DIR="/root/smarthome-web"  # שנה לנתיב בו האתר מותקן
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 TEMP_DIR="/tmp/smart_home_update_$TIMESTAMP"
 

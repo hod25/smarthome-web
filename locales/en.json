@@ -40,6 +40,8 @@
     "email": "Email",
     "message": "Message",
     "send": "Send Message",
+    "whatsappMessage": "Hello, I am interested in a smart home and would like more information",
+    "sendViaWhatsapp": "Send via WhatsApp",
     "success": "Your message has been sent successfully! We will get back to you shortly."
   },
   "plans": {
