@@ -4,7 +4,10 @@
     "services": "Services",
     "projects": "Projects",
     "contact": "Contact",
-    "plans": "Plans"
+    "plans": "Plans",
+    "testimonials": "Testimonials",
+    "comparison": "Comparison",
+    "faq": "FAQ"
   },
   "services": {
     "title": "Our Services",
@@ -86,5 +89,53 @@
       ]
     },
     "choose": "Choose Plan"
+  },
+  "aboutTitle": "About MySmartHome",
+  "aboutText": "MySmartHome specializes in advanced smart home solutions, with a focus on personal service, professionalism, and reliability. We accompany our clients from consultation to installation and support, ensuring a perfect fit for your needs. With years of experience, we bring innovation, transparency, and peace of mind to every home and business.",
+  "testimonialsTitle": "Testimonials",
+  "testimonial1Name": "Oren, Jerusalem",
+  "testimonial1Text": "Professional installation, fast service and answers to every question. My home is truly smart!",
+  "testimonial2Name": "Dana, Modi'in",
+  "testimonial2Text": "The system is easy to use, the kids love the voice control! Highly recommended.",
+  "testimonial3Name": "Moshe, Tel Aviv",
+  "testimonial3Text": "My life has become much more convenient. Thank you for the guidance and explanations!",
+  "comparison": {
+    "title": "Comparison between MySmartHome and competitors",
+    "colFeature": "Advantage",
+    "colCompetitors": "Competitors",
+    "colUs": "Us",
+    "feature1": "Personalization",
+    "ha1": "Full flexibility in automations, custom interface",
+    "comp1": "Preset limited settings",
+    "feature2": "Device support",
+    "ha2": "Supports thousands of brands and devices",
+    "comp2": "Limited to one or a few brands",
+    "feature3": "Local control",
+    "ha3": "Works on local network, not cloud-dependent",
+    "comp3": "Depends on internet and servers",
+    "feature4": "Privacy",
+    "ha4": "Data stored locally, full control",
+    "comp4": "Data sent to third-party companies",
+    "feature5": "Integrations",
+    "ha5": "Supports Google, Apple, Alexa and more",
+    "comp5": "Limited or no support",
+    "feature6": "Upgrades & updates",
+    "ha6": "Frequently updated",
+    "comp6": "Depends on provider, sometimes not updated",
+    "feature7": "Open source support",
+    "ha7": "Yes, fully open source",
+    "comp7": "Usually closed, no code access",
+    "feature8": "Remote access",
+    "ha8": "Full and secure option",
+    "comp8": "Depends on company services"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "How does a smart home work?",
+    "a1": "A smart home system allows remote control of lighting, blinds, air conditioners, cameras and more – via app, voice control or automations.",
+    "q2": "Can I add smart home to an existing apartment?",
+    "a2": "Absolutely! Smart systems can be installed in existing apartments, without major renovations.",
+    "q3": "Is the system secure?",
+    "a3": "Our systems include encryption, backups and regular security updates – for complete peace of mind."
   }
 }
