@@ -47,10 +47,14 @@ const Navbar: React.FC = () => {
         <ul className="flex space-x-4 rtl:space-x-reverse text-base font-medium">
           <li><Link href="/" className="px-2 py-1 rounded hover:bg-blue-50 hover:text-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-200">{t('home')}</Link></li>
           <li><Link href="#services" className="px-2 py-1 rounded hover:bg-blue-50 hover:text-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-200">{t('services')}</Link></li>
+          {/* <li><Link href="#projects" className="px-2 py-1 rounded hover:bg-blue-50 hover:text-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-200">{t('projects')}</Link></li> */}
           <li><Link href="#plans" className="px-2 py-1 rounded hover:bg-blue-50 hover:text-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-200">{t('plans')}</Link></li>
+          <li><Link href="#testimonials-section" className="px-2 py-1 rounded hover:bg-blue-50 hover:text-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-200">{t('testimonials')}</Link></li>
+          <li><Link href="#comparison-section" className="px-2 py-1 rounded hover:bg-blue-50 hover:text-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-200">{t('comparison')}</Link></li>
+          <li><Link href="#faq-section" className="px-2 py-1 rounded hover:bg-blue-50 hover:text-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-200">{t('faq')}</Link></li>
           <li><Link href="#contact" className="px-2 py-1 rounded hover:bg-blue-50 hover:text-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-200">{t('contact')}</Link></li>
         </ul>
-        <div className="relative" ref={dropdownRef}>
+        <div className="relative ml-6" ref={dropdownRef}>
           <button
             type="button"
             className="flex items-center gap-1 px-3 py-1 rounded-full bg-white text-blue-700 border border-blue-200 shadow text-sm font-semibold hover:bg-blue-100 hover:text-blue-900 transition focus:outline-none focus:ring-2 focus:ring-blue-200"
@@ -58,6 +62,7 @@ const Navbar: React.FC = () => {
             aria-haspopup="listbox"
             aria-expanded={open}
             tabIndex={0}
+            style={{ left: '8px', position: 'relative' }}
           >
             <span>{languages.find(l => l.code === locale)?.label || 'Language'}</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>

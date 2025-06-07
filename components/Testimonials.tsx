@@ -18,7 +18,7 @@ const Testimonials = () => {
     }
   ];
   return (
-    <section className="py-8 bg-white border-b border-blue-100">
+    <section id="testimonials-section" className="py-8 bg-white border-b border-blue-100">
       <div className="container mx-auto max-w-3xl text-center">
         <h2 className="text-2xl font-bold mb-4 text-blue-700">{t('testimonialsTitle') || 'לקוחות ממליצים'}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

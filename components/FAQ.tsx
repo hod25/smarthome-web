@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 const FAQ = () => {
   const t = useTranslations();
   return (
-    <section className="py-10 bg-white border-b border-blue-100">
+    <section id="faq-section" className="py-10 bg-white border-b border-blue-100">
       <div className="container mx-auto max-w-3xl">
         <h2 className="text-2xl font-bold mb-6 text-blue-700 text-center">{t('faq.title') || 'שאלות נפוצות'}</h2>
         <div className="space-y-4">

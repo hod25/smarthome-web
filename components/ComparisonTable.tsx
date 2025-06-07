@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 const ComparisonTable = () => {
   const t = useTranslations();
   return (
-    <section className="py-10 bg-gray-50 border-b border-blue-100">
+    <section id="comparison-section" className="py-10 bg-gray-50 border-b border-blue-100">
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-2xl font-bold mb-6 text-blue-700 text-center">{t('comparison.title')}</h2>
         <div className="overflow-x-auto">
