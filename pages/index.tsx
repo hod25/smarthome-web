@@ -6,6 +6,9 @@ import Services from '../components/Services';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Plans from '../components/plans';
+import Testimonials from '../components/Testimonials';
+import ComparisonTable from '../components/ComparisonTable';
+import FAQ from '../components/FAQ';
 import { useEffect } from 'react';
 
 const Home = ({ locale }: { locale?: string }) => {
@@ -86,6 +89,7 @@ const Home = ({ locale }: { locale?: string }) => {
         <link rel="shortcut icon" href="/circle.png" />
       </Head>
       <Navbar/>
+      <Testimonials />
       {/* HERO SECTION */}
       <section className="relative flex items-center justify-center min-h-[90vh] w-full overflow-hidden bg-gradient-to-br from-blue-100 to-blue-300">
         <div className="absolute inset-0 bg-cover bg-center opacity-60" style={{ backgroundImage: 'url("/kitchen.jpg")' }} />
@@ -121,6 +125,18 @@ const Home = ({ locale }: { locale?: string }) => {
         <div className="container mx-auto">
           <Contact />
         </div>
+      <FAQ />
+      {/* אזור השוואה מול מתחרים */}
+      <ComparisonTable />
+      {/* אודות החברה */}
+      <section className="py-10 bg-white border-b border-blue-100">
+        <div className="container mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl font-bold mb-4 text-blue-700">{t('aboutTitle') || 'אודות MySmartHome'}</h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t('aboutText') || 'MySmartHome מתמחה בפתרונות בית חכם מתקדמים, עם דגש על שירות אישי, מקצועיות, ואמינות. אנו מלווים את לקוחותינו משלב הייעוץ ועד ההתקנה והתמיכה, ומתחייבים להתאמה מלאה לצרכים שלכם. עם ניסיון של שנים בתחום, אנו מביאים חדשנות, שקיפות, ושקט נפשי לכל בית ועסק.'}
+          </p>
+        </div>
+      </section>
       {/* FOOTER */}
       <footer className="bg-blue-900 text-blue-100 py-1 text-center text-sm mt-4">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
