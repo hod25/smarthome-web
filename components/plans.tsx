@@ -68,8 +68,8 @@ const Plans: FC = () => {
           {plans.map((plan, i) => (
             <div
               key={plan.key}
-              className={`relative border-4 ${plan.color} bg-white p-8 shadow-2xl rounded-2xl text-left flex flex-col items-stretch transition-transform hover:scale-105 hover:shadow-blue-200 duration-200 min-w-[80vw] max-w-xs mx-2 snap-center md:min-w-0 md:max-w-none ${i === 1 ? 'md:scale-105 md:shadow-lg md:border-8 md:z-10' : ''}`}
-              style={{ height: '100%' }}
+              className={`relative border-4 ${plan.color} bg-white p-8 shadow-2xl rounded-2xl text-left flex flex-col items-stretch transition-transform hover:scale-105 hover:shadow-blue-200 duration-200 min-w-[80vw] max-w-xs mx-2 snap-center md:min-w-0 md:max-w-none h-[520px] md:h-auto ${i === 1 ? 'md:scale-105 md:shadow-lg md:border-8 md:z-10' : ''}`}
+              style={{ height: '520px' }}
             >
               {/* Decorative badge for the most popular plan */}
               {i === 1 && (
