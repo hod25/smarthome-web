@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
+import { useState } from 'react';
 
 interface Plan {
   key: string;
@@ -9,8 +10,9 @@ interface Plan {
   features: string[];
 }
 
-const Plans: FC = () => {
+const Plans: FC<{ setSelectedPlan: (plan: string) => void }> = ({ setSelectedPlan }) => {
   const t = useTranslations('plans');
+  const [selectedPlan, setSelectedPlanState] = useState('');
 
   const plans: Plan[] = [
     {
@@ -68,12 +70,12 @@ const Plans: FC = () => {
           {plans.map((plan, i) => (
             <div
               key={plan.key}
-              className={`relative border-4 ${plan.color} bg-white p-8 shadow-2xl rounded-2xl text-left flex flex-col items-stretch transition-transform hover:scale-105 hover:shadow-blue-200 duration-200 min-w-[80vw] max-w-xs mx-2 snap-center md:min-w-0 md:max-w-none h-[520px] md:h-auto ${i === 1 ? 'md:scale-105 md:shadow-lg md:border-8 md:z-10' : ''}`}
-              style={{ height: '520px' }}
+              className={`relative border-4 ${plan.color} bg-white p-8 shadow-2xl rounded-2xl text-left flex flex-col items-stretch transition-transform hover:scale-105 hover:shadow-blue-200 duration-200 min-w-[92vw] max-w-sm mx-2 snap-center md:min-w-0 md:max-w-none md:h-full ${i === 1 ? 'md:scale-105 md:shadow-lg md:border-8 md:z-10' : ''}`}
+              style={{ minHeight: '600px' }}
             >
               {/* Decorative badge for the most popular plan */}
               {i === 1 && (
-                <span className="absolute -top-5 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 font-bold px-4 py-1 rounded-full shadow text-xs tracking-wide border border-yellow-300 z-0 md:z-0">
+                <span className="absolute -top-5 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 font-bold px-4 py-1 rounded-full shadow text-xs tracking-wide border border-yellow-300 z-20 md:z-0">
                   הכי פופולרי
                 </span>
               )}
@@ -86,17 +88,21 @@ const Plans: FC = () => {
               </ul>
               <div className="flex-grow" />
               <button
+                type="button"
                 className="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-xl shadow-lg transition text-lg w-full"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.scrollTo({
-                    top: document.getElementById('contact')?.getBoundingClientRect().top! + window.scrollY - 80,
-                    behavior: 'smooth',
-                  });
+                onClick={() => {
+                  setSelectedPlan(plan.key);
+                  setSelectedPlanState(plan.key);
                   setTimeout(() => {
-                    const nameInput = document.querySelector('#contact input[name="name"]') as HTMLInputElement;
-                    if (nameInput) nameInput.focus();
-                  }, 700);
+                    window.scrollTo({
+                      top: document.getElementById('contact')?.getBoundingClientRect().top! + window.scrollY - 80,
+                      behavior: 'smooth',
+                    });
+                    setTimeout(() => {
+                      const nameInput = document.querySelector('#contact input[name="name"]') as HTMLInputElement;
+                      if (nameInput) nameInput.focus();
+                    }, 700);
+                  }, 100);
                 }}
                 aria-label={t('choose')}
               >

@@ -40,9 +40,7 @@
     "name": "Name",
     "email": "E-Mail",
     "message": "Nachricht",
-    "send": "Nachricht senden",
-    "whatsappMessage": "Hallo, ich interessiere mich für ein Smart Home und hätte gerne weitere Informationen",
-    "sendViaWhatsapp": "Per WhatsApp senden"
+    "send": "Nachricht senden"
   },
   "plans": {
     "title": "Smart-Home-Tarife",
@@ -91,7 +89,9 @@
       ]
     },
     "choose": "Tarif wählen"
-  },
+  },    
+  "whatsappMessage": "Hallo, ich interessiere mich für ein Smart Home und hätte gerne weitere Informationen",
+  "sendViaWhatsapp": "Per WhatsApp senden",
   "aboutTitle": "Über MySmartHome",
   "aboutText": "MySmartHome ist auf fortschrittliche Smart-Home-Lösungen spezialisiert, mit Fokus auf persönlichen Service, Professionalität und Zuverlässigkeit. Wir begleiten unsere Kunden von der Beratung bis zur Installation und dem Support und sorgen für eine perfekte Anpassung an Ihre Bedürfnisse. Mit jahrelanger Erfahrung bringen wir Innovation, Transparenz und Sicherheit in jedes Zuhause und Unternehmen.",
   "testimonialsTitle": "Kunden empfehlen",

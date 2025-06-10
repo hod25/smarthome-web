@@ -9,11 +9,12 @@ import Plans from '../components/plans';
 import Testimonials from '../components/Testimonials';
 import ComparisonTable from '../components/ComparisonTable';
 import FAQ from '../components/FAQ';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import About from '../components/About';
 
 const Home = ({ locale }: { locale?: string }) => {
   const t = useTranslations();
+  const [selectedPlan, setSelectedPlan] = useState("");
   // Detect locale by IP (browser) if not set
   useEffect(() => {
     if (!locale && typeof window !== 'undefined') {
@@ -114,7 +115,7 @@ const Home = ({ locale }: { locale?: string }) => {
         </div>
       {/* PLANS SECTION */}
         <div className="container mx-auto">
-          <Plans />
+          <Plans setSelectedPlan={setSelectedPlan} />
         </div>
       {/* PROJECTS SECTION */}
       {/* <section className="py-20 bg-white" id="projects">
@@ -124,7 +125,7 @@ const Home = ({ locale }: { locale?: string }) => {
       </section> */}
       {/* CONTACT SECTION */}
         <div className="container mx-auto">
-          <Contact />
+          <Contact selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />
         </div>
       {/* <FAQ /> */}
       {/* אזור השוואה מול מתחרים */}

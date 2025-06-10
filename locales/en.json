@@ -43,9 +43,11 @@
     "email": "Email",
     "message": "Message",
     "send": "Send Message",
-    "whatsappMessage": "Hello, I am interested in a smart home and would like more information",
-    "sendViaWhatsapp": "Send via WhatsApp",
-    "success": "Your message has been sent successfully! We will get back to you shortly."
+    "success": "Your message has been sent successfully! We will get back to you shortly.",
+    "choosePackage": "Choose a package (optional)",
+    "plan_basic": "Basic Package",
+    "plan_standard": "Family Package",
+    "plan_premium": "Premium Package"
   },
   "plans": {
     "title": "Smart Home Plans",
@@ -90,6 +92,8 @@
     },
     "choose": "Choose Plan"
   },
+  "whatsappMessage": "Hello, I am interested in a smart home and would like more information",
+  "sendViaWhatsapp": "For more details",
   "aboutTitle": "About MySmartHome",
   "aboutText": "MySmartHome specializes in advanced smart home solutions, with a focus on personal service, professionalism, and reliability. We accompany our clients from consultation to installation and support, ensuring a perfect fit for your needs. With years of experience, we bring innovation, transparency, and peace of mind to every home and business.",
   "testimonialsTitle": "Testimonials",
