@@ -47,7 +47,9 @@
     "choosePackage": "Choose a package (optional)",
     "plan_basic": "Basic Package",
     "plan_standard": "Family Package",
-    "plan_premium": "Premium Package"
+    "plan_premium": "Premium Package",
+    "formTitle": "Leave your details",
+    "formSubtitle": "Our representative will get back to you as soon as possible"
   },
   "plans": {
     "title": "Smart Home Plans",

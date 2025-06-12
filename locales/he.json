@@ -48,7 +48,9 @@
     "choosePackage": "בחר חבילה (לא חובה)",
     "plan_basic": "חבילת בסיס",
     "plan_standard": "חבילת משפחה",
-    "plan_premium": "חבילת פרימיום"
+    "plan_premium": "חבילת פרימיום",
+    "formTitle": "השאירו פרטים",
+    "formSubtitle": "ונציג שלנו יחזור אליכם בהקדם האפשרי"
   },
   "plans": {
     "title": "חבילות בית חכם",
