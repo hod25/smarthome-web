@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
   }, [open]);
 
   return (
-    <nav className={`w-full py-4 px-6 flex items-center justify-between bg-white shadow-md sticky top-0 z-50 ${isRtl ? '' : 'flex-row-reverse'}`} dir={isRtl ? 'rtl' : 'ltr'}>
+    <nav className={`w-full py-0.1 px-4 flex items-center justify-between bg-white shadow-md sticky top-0 z-50 ${isRtl ? '' : 'flex-row-reverse'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       <div className="container mx-auto flex justify-between items-center min-h-0 h-14">
         <Link href="/" className="flex items-center gap-2 rtl:flex-row-reverse">
           <Image
