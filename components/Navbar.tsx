@@ -7,6 +7,7 @@ import { useState, useRef, useEffect } from 'react';
 const Navbar: React.FC = () => {
   const t = useTranslations('navbar');
   const { locale, asPath } = useRouter();
+  const isRtl = locale === 'he';
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const languages = [
@@ -31,7 +32,7 @@ const Navbar: React.FC = () => {
   }, [open]);
 
   return (
-    <nav className="bg-white/90 backdrop-blur border-b border-blue-100 py-1 px-2 fixed w-full z-30 top-0 shadow-sm text-base transition-all">
+    <nav className={`w-full py-4 px-6 flex items-center justify-between bg-white shadow-md sticky top-0 z-50 ${isRtl ? '' : 'flex-row-reverse'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       <div className="container mx-auto flex justify-between items-center min-h-0 h-14">
         <Link href="/" className="flex items-center gap-2 rtl:flex-row-reverse">
           <Image

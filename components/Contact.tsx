@@ -1,16 +1,26 @@
 import { useTranslations } from 'next-intl';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
-const Contact: React.FC<{ selectedPlan: string; setSelectedPlan: (plan: string) => void }> = ({ selectedPlan, setSelectedPlan }) => {
+const Contact: React.FC<{ selectedPlan: string; setSelectedPlan: (plan: string) => void; forceExpand?: boolean; setForceExpand?: (v: boolean) => void }> = ({ selectedPlan, setSelectedPlan, forceExpand, setForceExpand }) => {
   const t = useTranslations('contact');
   const [sent, setSent] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const { locale } = useRouter();
+  const isRtl = locale === 'he';
 
   // Ensure select field updates if selectedPlan changes from outside (e.g. from Plans)
   const [localPlan, setLocalPlan] = useState(selectedPlan);
   useEffect(() => {
     setLocalPlan(selectedPlan);
   }, [selectedPlan]);
+
+  useEffect(() => {
+    if (forceExpand) {
+      setExpanded(true);
+      setForceExpand && setForceExpand(false);
+    }
+  }, [forceExpand, setForceExpand]);
 
   if (sent) {
     return (
@@ -24,10 +34,10 @@ const Contact: React.FC<{ selectedPlan: string; setSelectedPlan: (plan: string) 
   }
 
   return (
-    <section id="contact" className="py-8 bg-gray-100 rounded-xl shadow-inner">
-      <div className="max-w-2xl mx-auto bg-white p-4 md:p-8 rounded-2xl shadow-xl transition-all duration-300 flex flex-col items-center">
-        <h2 className="text-xl font-semibold mb-1 text-blue-700 text-center">{t('formTitle')}</h2>
-        <p className="mb-4 text-gray-600 text-center text-base">{t('formSubtitle')}</p>
+    <section id="contact" className={`py-8 bg-gray-100 rounded-xl shadow-inner ${isRtl ? '' : 'ltr'}`} dir={isRtl ? 'rtl' : 'ltr'}>
+      <div className={`max-w-2xl mx-auto bg-white p-4 md:p-8 rounded-2xl shadow-xl transition-all duration-300 flex flex-col items-center ${isRtl ? '' : 'items-start'}`}>
+        <h2 className={`text-xl font-semibold mb-1 text-blue-700 text-center w-full`}>{t('formTitle')}</h2>
+        <p className="mb-4 text-gray-600 text-center w-full text-base">{t('formSubtitle')}</p>
         <button
           className={`mx-auto flex items-center justify-center rounded-full font-semibold text-blue-700 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-300 transition mb-2 shadow-lg`}
           onClick={() => setExpanded(e => !e)}
@@ -84,6 +94,8 @@ const Contact: React.FC<{ selectedPlan: string; setSelectedPlan: (plan: string) 
                   type="tel"
                   placeholder=" "
                   required
+                  pattern="^0[2-9]\d{7,8}$"
+                  title={locale === 'he' ? 'יש להזין מספר טלפון ישראלי תקין' : 'Please enter a valid Israeli phone number'}
                   className="peer w-full min-w-0 pt-4 pb-3 pr-3 pl-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-200 placeholder-transparent text-right"
                 />
                 <label

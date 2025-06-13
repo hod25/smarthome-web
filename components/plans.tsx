@@ -76,7 +76,7 @@ const Plans: FC<{ setSelectedPlan: (plan: string) => void }> = ({ setSelectedPla
               {/* Decorative badge for the most popular plan */}
               {i === 1 && (
                 <span className="absolute -top-5 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 font-bold px-4 py-1 rounded-full shadow text-xs tracking-wide border border-yellow-300 z-20 md:z-0">
-                  הכי פופולרי
+                  {t('mostPopular') || 'הכי פופולרי'}
                 </span>
               )}
               <h3 className="text-2xl font-bold mb-2 text-blue-700 text-center">{plan.title}</h3>

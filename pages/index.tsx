@@ -15,6 +15,13 @@ import About from '../components/About';
 const Home = ({ locale }: { locale?: string }) => {
   const t = useTranslations();
   const [selectedPlan, setSelectedPlan] = useState("");
+  const [forceExpandContact, setForceExpandContact] = useState(false);
+
+  // גלילה לראש הדף בכל רענון
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Detect locale by IP (browser) if not set
   useEffect(() => {
     if (!locale && typeof window !== 'undefined') {
@@ -115,7 +122,7 @@ const Home = ({ locale }: { locale?: string }) => {
         </div>
       {/* PLANS SECTION */}
         <div className="container mx-auto">
-          <Plans setSelectedPlan={setSelectedPlan} />
+          <Plans setSelectedPlan={(plan) => { setSelectedPlan(plan); setForceExpandContact(true); }} />
         </div>
       {/* PROJECTS SECTION */}
       {/* <section className="py-20 bg-white" id="projects">
@@ -125,7 +132,7 @@ const Home = ({ locale }: { locale?: string }) => {
       </section> */}
       {/* CONTACT SECTION */}
         <div className="container mx-auto">
-          <Contact selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />
+          <Contact selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} forceExpand={forceExpandContact} setForceExpand={setForceExpandContact} />
         </div>
       {/* <FAQ /> */}
       {/* אזור השוואה מול מתחרים */}
