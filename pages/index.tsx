@@ -131,7 +131,7 @@ const Home = ({ locale }: { locale?: string }) => {
       {/* אזור השוואה מול מתחרים */}
       {/* <ComparisonTable /> */}
       {/* אודות החברה */}
-      <About />
+      {/* <About /> */}
       {/* FOOTER */}
       <footer className="bg-blue-900 text-blue-100 py-1 text-center text-sm mt-4">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-2">

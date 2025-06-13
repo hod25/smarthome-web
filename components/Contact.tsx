@@ -55,20 +55,49 @@ const Contact: React.FC<{ selectedPlan: string; setSelectedPlan: (plan: string) 
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="https://smarthome.co.il/thank-you" />
             <div className="flex flex-col md:flex-row gap-4 flex-wrap">
-              <input
-                type="text"
-                name="name"
-                placeholder={t('name')}
-                required
-                className="flex-1 w-full min-w-0 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200"
-              />
-              <input
-                type="tel"
-                name="phone"
-                placeholder={t('phone') || 'טלפון'}
-                required
-                className="flex-1 w-full min-w-0 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200"
-              />
+              {/* Name field with floating label */}
+              <div className="relative flex-1 w-full min-w-0 text-right">
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder=" "
+                  required
+                  className="peer w-full min-w-0 pt-4 pb-3 pr-3 pl-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-200 placeholder-transparent text-right"
+                />
+                <label
+                  htmlFor="name"
+                  className="absolute right-3 top-2 text-gray-500 text-sm transition-all
+                            peer-placeholder-shown:top-3 peer-placeholder-shown:text-base
+                            peer-placeholder-shown:text-gray-400
+                            peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500
+                            peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-sm"
+                >
+                  {t('name') || 'שם מלא'}<span className="text-red-500">*</span>
+                </label>
+              </div>
+              {/* Phone field with floating label */}
+              <div className="relative flex-1 w-full min-w-0 text-right">
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder=" "
+                  required
+                  className="peer w-full min-w-0 pt-4 pb-3 pr-3 pl-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-200 placeholder-transparent text-right"
+                />
+                <label
+                  htmlFor="phone"
+                  className="absolute right-3 top-2 text-gray-500 text-sm transition-all
+                            peer-placeholder-shown:top-3 peer-placeholder-shown:text-base
+                            peer-placeholder-shown:text-gray-400
+                            peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500
+                            peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-sm"
+                >
+                  {t('phone') || 'טלפון'}<span className="text-red-500">*</span>
+                </label>
+              </div>
+              {/* Plan select remains unchanged */}
               <select
                 name="plan"
                 id="plan"
@@ -81,26 +110,54 @@ const Contact: React.FC<{ selectedPlan: string; setSelectedPlan: (plan: string) 
                 required={false}
               >
                 {/* @ts-ignore */}
-                <option value="">{t('choosePackage') || 'בחר חבילה (לא חובה)'}</option>
+                <option value="">{t('choosePackage')}</option>
                 {/* @ts-ignore */}
-                <option value="basic">{t('plan_basic') || 'חבילת בסיס'}</option>
+                <option value="basic">{t('plan_basic')}</option>
                 {/* @ts-ignore */}
-                <option value="standard">{t('plan_standard') || 'חבילת משפחה'}</option>
+                <option value="standard">{t('plan_standard')}</option>
                 {/* @ts-ignore */}
-                <option value="premium">{t('plan_premium') || 'חבילת פרימיום'}</option>
+                <option value="premium">{t('plan_premium')}</option>
               </select>
             </div>
-            <input
-              type="email"
-              name="email"
-              placeholder={t('email')}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200"
-            />
-            <textarea
-              name="message"
-              placeholder={t('message')}
-              className="w-full p-3 border border-gray-300 rounded-lg h-32 focus:ring-2 focus:ring-blue-200"
-            ></textarea>
+            {/* Email field with floating label */}
+            <div className="relative w-full text-right">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder=" "
+                className="peer w-full pt-4 pb-3 pr-3 pl-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-200 placeholder-transparent text-right"
+              />
+              <label
+                htmlFor="email"
+                className="absolute right-3 top-2 text-gray-500 text-sm transition-all
+                          peer-placeholder-shown:top-3 peer-placeholder-shown:text-base
+                          peer-placeholder-shown:text-gray-400
+                          peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500
+                          peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-sm"
+              >
+                {t('email') || 'אימייל'}
+              </label>
+            </div>
+            {/* Message field with floating label */}
+            <div className="relative w-full text-right">
+              <textarea
+                id="message"
+                name="message"
+                placeholder=" "
+                className="peer w-full pt-4 pb-3 pr-3 pl-3 border border-gray-300 rounded-lg h-32 focus:outline-none focus:ring-2 focus:ring-blue-200 placeholder-transparent text-right resize-none"
+              ></textarea>
+              <label
+                htmlFor="message"
+                className="absolute right-3 top-2 text-gray-500 text-sm transition-all
+                          peer-placeholder-shown:top-3 peer-placeholder-shown:text-base
+                          peer-placeholder-shown:text-gray-400
+                          peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500
+                          peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-sm"
+              >
+                {t('message') || 'הודעה'}
+              </label>
+            </div>
             <button
               type="submit"
               className="w-56 max-w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-xl shadow-lg font-bold text-lg transition mx-auto block"
