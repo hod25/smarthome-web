@@ -45,53 +45,49 @@
     "formSubtitle": "Unser Vertreter wird sich so schnell wie möglich mit Ihnen in Verbindung setzen"
   },
   "plans": {
-    "title": "Smart-Home-Tarife",
+    "title": "Smart Home Plans",
     "basic": {
-      "title": "Minimale smarte Steuerung",
-      "price": "₪6.500 – ₪7.500",
+      "title": "Basic Package",
+      "price": "From ₪6,500",
       "features": [
-        "Home Assistant auf Raspberry Pi inkl. Installation",
-        "8 smarte Lichtschalter (Wohnzimmer, Küche, Flur, Zimmer)",
-        "2 smarte Rollladensteuerungen (Wohnzimmer und Schlafzimmer)",
-        "2 smarte Klimaanlagen-Fernbedienungen (IR)",
-        "3 Tür-/Fenstersensoren",
-        "2 Bewegungsmelder für Durchgang/Sicherheit",
-        "3 Basis-Automationen + Steuerung per Handy"
+        "Smart control of central lighting in the home",
+        "Smart control of blinds",
+        "Simple automation scenarios",
+        "Remote on/off from your phone",
+        "Door/window sensors for security",
+        "Professional installation at your home"
       ]
     },
     "standard": {
-      "title": "Vollständiges Familien-Smart-Home",
-      "price": "₪12.000 – ₪15.000",
+      "title": "Family Package",
+      "price": "From ₪12,000",
       "features": [
-        "Home Assistant auf leistungsstarkem Mini-PC",
-        "15 smarte Schalter für vollständige Hausabdeckung",
-        "4 smarte Rollladensteuerungen",
-        "4 Bewegungsmelder (innen und außen)",
-        "6 Öffnungssensoren für Türen und Fenster",
-        "Steuerung von 3 Klimaanlagen über IR",
-        "2 IP-Kameras mit Fernzugriff",
-        "Ein Sprachassistent (Google / Alexa)",
-        "Dashboard angepasst nach Zonen und Benutzern"
+        "Smart control of all lighting in the home",
+        "Smart control of blinds and air conditioners",
+        "Automation scenarios",
+        "Advanced cameras and security sensors",
+        "Remote control from your phone",
+        "Custom app for the whole family",
+        "Professional installation at your home"
       ]
     },
     "premium": {
-      "title": "Das ultimative Smart Home",
-      "price": "₪22.000 – ₪30.000",
+      "title": "Premium Package",
+      "price": "From ₪22,000",
       "features": [
-        "Mini-PC i5 + USV für ein stabiles und robustes System",
-        "20 smarte Schalter inkl. Garten, Wege und Außenbeleuchtung",
-        "6 smarte Rollladensteuerungen mit Kombimodus",
-        "6 Bewegungsmelder innen und außen",
-        "8 Öffnungs-, Überschwemmungs- und Rauchmelder für maximale Sicherheit",
-        "5 IR-Fernbedienungen für Klimaanlagen, Fernseher, Audio",
-        "4 Kameras mit lokaler Aufzeichnung (ohne Cloud-Abhängigkeit)",
-        "2 fest installierte Wandtablets zur smarten Steuerung",
-        "2 Sprachassistenten in verschiedenen Bereichen",
-        "Intelligentes Gegensprechsystem + fortschrittliche Stromüberwachung"
+        "Full smart control of all home systems (lighting, blinds, air conditioners, cameras, gates, and more)",
+        "Advanced automation scenarios",
+        "Advanced security: flood, smoke, opening, and motion sensors",
+        "Cameras with local recording and remote viewing",
+        "Smart control screens in the house",
+        "Custom app with advanced user interface",
+        "Smart intercom system",
+        "Professional installation, support, and full assistance"
       ]
     },
-    "choose": "Tarif wählen"
-  },    
+    "choose": "Choose Plan",
+    "mostPopular": "Most Popular"
+  },
   "whatsappMessage": "Hallo, ich interessiere mich für ein Smart Home und hätte gerne weitere Informationen",
   "sendViaWhatsapp": "Per WhatsApp senden",
   "aboutTitle": "Über MySmartHome",
@@ -147,6 +143,5 @@
     "a5": "Ja, das System ist so konzipiert, dass es benutzerfreundlich ist. Sie können Ihr Smart Home jederzeit über Ihr Smartphone, Tablet oder per Sprache steuern.",
     "q6": "Was ist, wenn ich technische Unterstützung benötige?",
     "a6": "Unser Support-Team steht Ihnen jederzeit zur Verfügung, um Ihnen bei Fragen oder Problemen zu helfen. Sie erreichen uns per Telefon, E-Mail oder WhatsApp."
-  },
-  "mostPopular": "Am beliebtesten"
+  }
 }

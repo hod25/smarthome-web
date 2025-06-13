@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 interface Plan {
   key: string;
@@ -12,6 +13,8 @@ interface Plan {
 
 const Plans: FC<{ setSelectedPlan: (plan: string) => void }> = ({ setSelectedPlan }) => {
   const t = useTranslations('plans');
+  const { locale } = useRouter();
+  const isRtl = locale === 'he';
   const [selectedPlan, setSelectedPlanState] = useState('');
 
   const plans: Plan[] = [
@@ -62,19 +65,21 @@ const Plans: FC<{ setSelectedPlan: (plan: string) => void }> = ({ setSelectedPla
     },
   ];
 
+  const plansToShow = isRtl ? plans : [...plans].reverse();
+
   return (
     <section id="plans" className="py-16 bg-gray-50">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold mb-10">{t('title')}</h2>
         <div className="flex md:grid md:grid-cols-3 gap-8 overflow-x-auto md:overflow-visible snap-x md:snap-none pb-4">
-          {plans.map((plan, i) => (
+          {plansToShow.map((plan, i) => (
             <div
               key={plan.key}
-              className={`relative border-4 ${plan.color} bg-white p-8 shadow-2xl rounded-2xl text-left flex flex-col items-stretch transition-transform hover:scale-105 hover:shadow-blue-200 duration-200 min-w-[92vw] max-w-sm mx-2 snap-center md:min-w-0 md:max-w-none md:h-full ${i === 1 ? 'md:scale-105 md:shadow-lg md:border-8 md:z-10' : ''}`}
+              className={`relative border-4 ${plan.color} bg-white p-8 shadow-2xl rounded-2xl text-left flex flex-col items-stretch transition-transform hover:scale-105 hover:shadow-blue-200 duration-200 min-w-[92vw] max-w-sm mx-2 snap-center md:min-w-0 md:max-w-none md:h-full ${plan.key === 'standard' ? 'md:scale-105 md:shadow-lg md:border-8 md:z-10' : ''}`}
               style={{ minHeight: '600px' }}
             >
               {/* Decorative badge for the most popular plan */}
-              {i === 1 && (
+              {plan.key === 'standard' && (
                 <span className="absolute -top-5 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 font-bold px-4 py-1 rounded-full shadow text-xs tracking-wide border border-yellow-300 z-20 md:z-0">
                   {t('mostPopular') || 'הכי פופולרי'}
                 </span>
@@ -104,9 +109,8 @@ const Plans: FC<{ setSelectedPlan: (plan: string) => void }> = ({ setSelectedPla
                     }, 700);
                   }, 100);
                 }}
-                aria-label={t('choose')}
               >
-                {t('choose')}
+                {t('choose') || 'לבחירת חבילה'}
               </button>
             </div>
           ))}

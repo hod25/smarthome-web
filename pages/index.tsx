@@ -122,7 +122,10 @@ const Home = ({ locale }: { locale?: string }) => {
         </div>
       {/* PLANS SECTION */}
         <div className="container mx-auto">
-          <Plans setSelectedPlan={(plan) => { setSelectedPlan(plan); setForceExpandContact(true); }} />
+          <Plans setSelectedPlan={(plan) => {
+            setSelectedPlan(plan);
+            setForceExpandContact(true);
+          }} />
         </div>
       {/* PROJECTS SECTION */}
       {/* <section className="py-20 bg-white" id="projects">
