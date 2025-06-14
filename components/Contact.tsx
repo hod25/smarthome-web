@@ -178,8 +178,8 @@ const Contact: React.FC<{ selectedPlan: string; setSelectedPlan: (plan: string) 
             </button>
           </form>
           <div className="mt-4 text-center text-gray-500 text-sm flex flex-col md:flex-row md:justify-center md:items-center gap-2 md:gap-4">
-            <span className="inline-block order-1 md:order-1">✉️ info@smarthome.co.il</span>
-            <span className="hidden md:inline-block order-2">|</span>
+            {/* <span className="inline-block order-1 md:order-1">✉️ info@smarthome.co.il</span>
+            <span className="hidden md:inline-block order-2">|</span> */}
             <span className="inline-block order-2 md:order-3">📞 050-430-7411</span>
           </div>
         </div>
