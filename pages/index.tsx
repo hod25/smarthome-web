@@ -100,7 +100,7 @@ const Home = ({ locale }: { locale?: string }) => {
       <Navbar/>
       {/* <Testimonials /> */}
       {/* HERO SECTION */}
-      <section className="relative flex items-center justify-center min-h-[90vh] w-full overflow-hidden bg-gradient-to-br from-blue-100 to-blue-300">
+      <section className="relative flex items-center justify-center min-h-[60vh] w-full overflow-hidden bg-gradient-to-br from-blue-100 to-blue-300">
         <div className="absolute inset-0 bg-cover bg-center opacity-60" style={{ backgroundImage: 'url("/kitchen.jpg")' }} />
         <div className="absolute inset-0 bg-black bg-opacity-40" />
         <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4 py-24">
@@ -114,6 +114,19 @@ const Home = ({ locale }: { locale?: string }) => {
           >
             {t('sendViaWhatsapp') || 'שלח בוואטסאפ'}
           </a>
+        </div>
+        {/* חץ גלילה למטה */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center animate-bounce cursor-pointer" onClick={() => {
+          const nextSection = document.querySelector('#services');
+          if (nextSection) {
+            window.scrollTo({
+              top: (nextSection as HTMLElement).getBoundingClientRect().top + window.scrollY - 40,
+              behavior: 'smooth',
+            });
+          }
+        }}>
+          <svg className="w-8 h-8 text-white drop-shadow-lg" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          <span className="text-xs text-white mt-1">גלול למטה</span>
         </div>
       </section>
       {/* SERVICES SECTION */}
