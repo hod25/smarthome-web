@@ -127,7 +127,7 @@ const Home = ({ locale }: { locale?: string }) => {
             }
           }}>
             <svg className="w-8 h-8 text-white drop-shadow-lg" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
-            <span className="text-xs text-white mt-1 text-center">גלול למטה</span>
+            <span className="text-xs text-white mt-1 text-center">{t('scrollDown')}</span>
           </div>
         </div>
       </section>
