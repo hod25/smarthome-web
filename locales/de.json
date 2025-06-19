@@ -144,5 +144,7 @@
     "q6": "Was ist, wenn ich technische Unterstützung benötige?",
     "a6": "Unser Support-Team steht Ihnen jederzeit zur Verfügung, um Ihnen bei Fragen oder Problemen zu helfen. Sie erreichen uns per Telefon, E-Mail oder WhatsApp."
   },
-  "scrollDown": "Nach unten scrollen"
+  "scrollDown": "Nach unten scrollen",
+  "footerCopyright": "Alle Rechte vorbehalten.",
+  "footerDev": "Design & Entwicklung: SmartHome Team"
 }

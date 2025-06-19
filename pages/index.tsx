@@ -160,8 +160,8 @@ const Home = ({ locale }: { locale?: string }) => {
       {/* FOOTER */}
       <footer className="bg-blue-900 text-blue-100 py-1 text-center text-sm mt-4">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
-          <span>&copy; {new Date().getFullYear()} SmartHome. כל הזכויות שמורות.</span>
-          <span>עיצוב ופיתוח: SmartHome Team</span>
+          <span>&copy; {new Date().getFullYear()} SmartHome. {t('footerCopyright')}</span>
+          <span>{t('footerDev')}</span>
         </div>
       </footer>
     </div>

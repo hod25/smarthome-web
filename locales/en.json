@@ -145,5 +145,7 @@
     "q3": "Is the system secure?",
     "a3": "Our systems include encryption, backups and regular security updates – for complete peace of mind."
   },
-  "scrollDown": "Scroll down"
+  "scrollDown": "Scroll down",
+  "footerCopyright": "All rights reserved.",
+  "footerDev": "Design & Development: SmartHome Team"
 }
