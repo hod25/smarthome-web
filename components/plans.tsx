@@ -68,7 +68,7 @@ const Plans: FC<{ setSelectedPlan: (plan: string) => void }> = ({ setSelectedPla
   const plansToShow = isRtl ? plans : [...plans].reverse();
 
   return (
-    <section id="plans" className="py-16 bg-gray-50">
+    <section id="plans" className="py-8 bg-gray-50">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold mb-10">{t('title')}</h2>
         <div className="flex flex-col md:grid md:grid-cols-3 gap-8 overflow-x-auto md:overflow-visible snap-x md:snap-none pb-4">

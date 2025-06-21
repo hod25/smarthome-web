@@ -24,7 +24,7 @@ const Services: React.FC = () => {
   const cardsToShow = isRtl ? cards : [...cards].reverse();
 
   return (
-    <section id="services" className="py-16 bg-gray-100">
+    <section id="services" className="py-6 bg-gray-100">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-semibold mb-8">{t('title')}</h2>
         <div className="flex flex-col items-center md:grid md:grid-cols-3 gap-8 overflow-x-auto md:overflow-visible snap-x md:snap-none pb-4">
