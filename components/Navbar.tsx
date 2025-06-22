@@ -9,6 +9,7 @@ const Navbar: React.FC = () => {
   const { locale, asPath } = useRouter();
   const isRtl = locale === 'he';
   const [open, setOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const languages = [
     { code: 'he', label: 'עברית' },
@@ -45,7 +46,16 @@ const Navbar: React.FC = () => {
           />
           <span className="font-bold text-blue-700 text-lg hidden sm:inline">MySmartHome</span>
         </Link>
-        <ul className="flex space-x-4 rtl:space-x-reverse text-base font-medium">
+        {/* Hamburger for mobile */}
+        <button
+          className="sm:hidden flex items-center justify-center p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-200"
+          onClick={() => setDrawerOpen(true)}
+          aria-label="Open menu"
+        >
+          <svg className="w-7 h-7 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+        {/* Main nav links for desktop */}
+        <ul className="hidden sm:flex space-x-4 rtl:space-x-reverse text-base font-medium">
           <li><Link href="/" className="px-2 py-1 rounded hover:bg-blue-50 hover:text-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-200">{t('home')}</Link></li>
           <li><Link href="#services" className="px-2 py-1 rounded hover:bg-blue-50 hover:text-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-200">{t('services')}</Link></li>
           <li><Link href="#plans" className="px-2 py-1 rounded hover:bg-blue-50 hover:text-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-200">{t('plans')}</Link></li>
@@ -87,6 +97,27 @@ const Navbar: React.FC = () => {
             </ul>
           )}
         </div>
+        {/* Side drawer for mobile */}
+        {drawerOpen && (
+          <div className="fixed inset-0 z-50 flex">
+            <div className="fixed inset-0 bg-black bg-opacity-40" onClick={() => setDrawerOpen(false)}></div>
+            <div className={`relative bg-white w-64 h-full shadow-lg p-6 flex flex-col gap-4 ${isRtl ? 'right-0' : 'left-0'}`} style={{[isRtl ? 'right' : 'left']: 0, top: 0, position: 'fixed'}}>
+              <button
+                className="absolute top-4 right-4 text-blue-700 hover:text-blue-900"
+                onClick={() => setDrawerOpen(false)}
+                aria-label="Close menu"
+              >
+                <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+              <nav className="flex flex-col gap-4 mt-8">
+                <Link href="/" className="py-2 px-4 rounded hover:bg-blue-50 hover:text-blue-700 text-lg font-medium" onClick={() => setDrawerOpen(false)}>{t('home')}</Link>
+                <Link href="#services" className="py-2 px-4 rounded hover:bg-blue-50 hover:text-blue-700 text-lg font-medium" onClick={() => setDrawerOpen(false)}>{t('services')}</Link>
+                <Link href="#plans" className="py-2 px-4 rounded hover:bg-blue-50 hover:text-blue-700 text-lg font-medium" onClick={() => setDrawerOpen(false)}>{t('plans')}</Link>
+                <Link href="#contact" className="py-2 px-4 rounded hover:bg-blue-50 hover:text-blue-700 text-lg font-medium" onClick={() => setDrawerOpen(false)}>{t('contact')}</Link>
+              </nav>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
