@@ -37,17 +37,28 @@ const Navbar: React.FC = () => {
       {/* Mobile layout */}
       <div className="container mx-auto grid grid-cols-3 items-center h-14 sm:hidden">
         {/* עמודה 1 – תפריט המבורגר במובייל */}
-        <div className="col-start-0.1 flex justify-start rtl:justify-end">
-          <button
-            className="p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-200"
-            onClick={() => setDrawerOpen(true)}
-            aria-label="Open menu"
-          >
-            <svg className="w-7 h-7 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
+<div className="flex justify-start rtl:justify-end">
+  <button
+    className="p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-200"
+    onClick={() => setDrawerOpen(true)}
+    aria-label="Open menu"
+  >
+    <svg
+      className="w-7 h-7 text-blue-700"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M4 6h16M4 12h16M4 18h16"
+      />
+    </svg>
+  </button>
+</div>
+
         {/* עמודה 2 – הלוגו במרכז */}
         <div className="col-start-2 flex justify-center">
           <Link href="/" className="flex items-center gap-2 rtl:flex-row-reverse">
