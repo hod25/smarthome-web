@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState, useRef, useEffect } from 'react';
+import SidebarMenu from './SidebarMenu';
 
 const Navbar: React.FC = () => {
   const t = useTranslations('navbar');
@@ -33,48 +34,31 @@ const Navbar: React.FC = () => {
   }, [open]);
 
   return (
-    <nav className={`w-full py-0.1 px-4 flex items-center justify-between bg-white shadow-md sticky top-0 z-50 ${isRtl ? '' : 'flex-row-reverse'}`} dir={isRtl ? 'rtl' : 'ltr'}>
+    <nav className={`w-full px-2 flex items-center justify-between bg-white shadow-md sticky top-0 z-50 ${isRtl ? '' : 'flex-row-reverse'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       {/* Mobile layout */}
-      <div className="container mx-auto grid grid-cols-3 items-center h-14 sm:hidden">
-        {/* עמודה 1 – תפריט המבורגר במובייל */}
-<div className="flex justify-start rtl:justify-end">
-  <button
-    className="p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-200"
-    onClick={() => setDrawerOpen(true)}
-    aria-label="Open menu"
-  >
-    <svg
-      className="w-7 h-7 text-blue-700"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M4 6h16M4 12h16M4 18h16"
-      />
-    </svg>
-  </button>
-</div>
-
-        {/* עמודה 2 – הלוגו במרכז */}
-        <div className="col-start-2 flex justify-center">
-          <Link href="/" className="flex items-center gap-2 rtl:flex-row-reverse">
-            <Image
-              src="/circle.png"
-              alt="MySmartHome Logo"
-              width={36}
-              height={36}
-              className="object-contain drop-shadow"
-              priority
+      <div className="container mx-auto flex items-center justify-between h-14 sm:hidden">
+        {/* כפתור המבורגר */}
+        <button
+          className="p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-200"
+          onClick={() => setDrawerOpen(true)}
+          aria-label="Open menu"
+        >
+          <svg
+            className="w-7 h-7 text-blue-700"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
             />
-            <span className="font-bold text-blue-700 text-lg hidden sm:inline">MySmartHome</span>
-          </Link>
-        </div>
-        {/* עמודה 3 – dropdown שפה בקצה */}
-        <div className="col-start-3 flex justify-end" ref={dropdownRef}>
+          </svg>
+        </button>
+        {/* כפתור שפה */}
+        <div className="flex items-center" ref={dropdownRef}>
           <button
             type="button"
             className="flex items-center gap-1 px-3 py-1 rounded-full bg-white text-blue-700 border border-blue-200 shadow text-sm font-semibold hover:bg-blue-100 hover:text-blue-900 transition focus:outline-none focus:ring-2 focus:ring-blue-200"
@@ -177,26 +161,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
       {/* Side drawer for mobile */}
-      {drawerOpen && (
-        <div className="fixed inset-0 z-50 flex">
-          <div className="fixed inset-0 bg-black bg-opacity-40" onClick={() => setDrawerOpen(false)}></div>
-          <div className={`relative bg-white w-64 h-full shadow-lg p-6 flex flex-col gap-4 ${isRtl ? 'right-0' : 'left-0'}`} style={{[isRtl ? 'right' : 'left']: 0, top: 0, position: 'fixed'}}>
-            <button
-              className="absolute top-4 right-4 text-blue-700 hover:text-blue-900"
-              onClick={() => setDrawerOpen(false)}
-              aria-label="Close menu"
-            >
-              <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-            </button>
-            <nav className="flex flex-col gap-4 mt-8">
-              <Link href="/" className="py-2 px-4 rounded hover:bg-blue-50 hover:text-blue-700 text-lg font-medium" onClick={() => setDrawerOpen(false)}>{t('home')}</Link>
-              <Link href="#services" className="py-2 px-4 rounded hover:bg-blue-50 hover:text-blue-700 text-lg font-medium" onClick={() => setDrawerOpen(false)}>{t('services')}</Link>
-              <Link href="#plans" className="py-2 px-4 rounded hover:bg-blue-50 hover:text-blue-700 text-lg font-medium" onClick={() => setDrawerOpen(false)}>{t('plans')}</Link>
-              <Link href="#contact" className="py-2 px-4 rounded hover:bg-blue-50 hover:text-blue-700 text-lg font-medium" onClick={() => setDrawerOpen(false)}>{t('contact')}</Link>
-            </nav>
-          </div>
-        </div>
-      )}
+      <SidebarMenu open={drawerOpen} onClose={() => setDrawerOpen(false)} isRtl={isRtl} />
     </nav>
   );
 };
