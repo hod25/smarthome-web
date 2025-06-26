@@ -56,10 +56,9 @@ const Contact: React.FC<{ selectedPlan: string; setSelectedPlan: (plan: string) 
         >
           <form
             className="space-y-5"
-            onSubmit={e => {
-              e.preventDefault();
-              setSent(true);
-            }}
+            action="https://formsubmit.co/hmitrany@gmail.com"
+            method="POST"
+            onSubmit={undefined}
             autoComplete="on"
           >
             <input type="hidden" name="_captcha" value="false" />
