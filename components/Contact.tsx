@@ -56,13 +56,36 @@ const Contact: React.FC<{ selectedPlan: string; setSelectedPlan: (plan: string) 
         >
           <form
             className="space-y-5"
-            action="https://formsubmit.co/hmitrany@gmail.com"
-            method="POST"
-            onSubmit={undefined}
+            onSubmit={async e => {
+              e.preventDefault();
+              e.stopPropagation();
+              
+              const form = e.target as HTMLFormElement;
+              const formData = new FormData(form);
+              
+              // Add FormSubmit specific fields for AJAX
+              formData.append('_captcha', 'false');
+              formData.append('_template', 'table');
+              
+              try {
+                const response = await fetch('https://formsubmit.co/hmitrany@gmail.com', {
+                  method: 'POST',
+                  body: formData,
+                });
+                
+                if (response.ok) {
+                  setSent(true);
+                } else {
+                  throw new Error('Failed to send');
+                }
+              } catch (err) {
+                alert('אירעה שגיאה בשליחת הטופס. נסה שוב או פנה אלינו ישירות.');
+              }
+              
+              return false;
+            }}
             autoComplete="on"
           >
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://smarthome.co.il/thank-you" />
             <div className="flex flex-col md:flex-row gap-4 flex-wrap">
               {/* Name field with floating label */}
               <div className="relative flex-1 w-full min-w-0 text-right">
