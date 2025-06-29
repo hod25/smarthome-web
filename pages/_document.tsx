@@ -2,9 +2,52 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang="he" dir="rtl">
       <Head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        
+        {/* Favicon */}
         <link rel="icon" href="/circle.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/circle.png" />
+        
+        {/* Canonical */}
+        <link rel="canonical" href="https://smarthome.7112000.xyz" />
+        
+        {/* Google Site Verification */}
+        <meta name="google-site-verification" content="e52777fdb6df9832" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Smart Home Israel" />
+        <meta property="og:locale" content="he_IL" />
+        
+        {/* Schema.org structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Smart Home Israel",
+              "description": "מתקינים מערכות בית חכם מתקדמות בישראל",
+              "url": "https://smarthome.7112000.xyz",
+              "telephone": "050-430-7411",
+              "email": "info@smarthome.co.il",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "IL",
+                "addressLocality": "Israel"
+              },
+              "serviceArea": {
+                "@type": "Country",
+                "name": "Israel"
+              }
+            })
+          }}
+        />
       </Head>
       <body>
         <Main />

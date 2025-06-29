@@ -74,6 +74,8 @@ const Home = ({ locale }: { locale?: string }) => {
             <meta name="twitter:image" content="/circle.png" />
             <link rel="alternate" hrefLang="he" href="https://smarthome.7112000.xyz/" />
             <link rel="alternate" hrefLang="en" href="https://smarthome.7112000.xyz/en" />
+            <link rel="alternate" hrefLang="de" href="https://smarthome.7112000.xyz/de" />
+            <meta property="og:url" content="https://smarthome.7112000.xyz/" />
           </>
         ) : (
           <>
@@ -91,6 +93,8 @@ const Home = ({ locale }: { locale?: string }) => {
             <meta name="twitter:image" content="/circle.png" />
             <link rel="alternate" hrefLang="he" href="https://smarthome.7112000.xyz/" />
             <link rel="alternate" hrefLang="en" href="https://smarthome.7112000.xyz/en" />
+            <link rel="alternate" hrefLang="de" href="https://smarthome.7112000.xyz/de" />
+            <meta property="og:url" content="https://smarthome.7112000.xyz/en" />
           </>
         )}
         <link rel="icon" href="/circle.png" />
