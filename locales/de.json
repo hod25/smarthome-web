@@ -39,10 +39,15 @@
     "title": "Kontakt",
     "name": "Name",
     "email": "E-Mail",
+    "phone": "Telefon",
     "message": "Nachricht",
     "send": "Nachricht senden",
     "formTitle": "Hinterlassen Sie Ihre Daten",
-    "formSubtitle": "Unser Vertreter wird sich so schnell wie möglich mit Ihnen in Verbindung setzen"
+    "formSubtitle": "Unser Vertreter wird sich so schnell wie möglich mit Ihnen in Verbindung setzen",
+    "choosePackage": "Paket auswählen",
+    "plan_basic": "Basic Paket",
+    "plan_standard": "Standard Paket", 
+    "plan_premium": "Premium Paket"
   },
   "plans": {
     "title": "Smart Home Plans",

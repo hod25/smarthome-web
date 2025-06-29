@@ -9,9 +9,15 @@ export default function Document() {
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
         
-        {/* Favicon */}
-        <link rel="icon" href="/circle.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/circle.png" />
+        {/* Favicon - קל ומהיר */}
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
+        
+        {/* הסרת preload הכבד */}
+        {/* <link rel="preload" href="/circle.png" as="image" type="image/png" /> */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         
         {/* Canonical */}
         <link rel="canonical" href="https://smarthome.7112000.xyz" />

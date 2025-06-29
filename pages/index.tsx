@@ -1,16 +1,34 @@
 import { GetStaticPropsContext } from 'next';
 import { useTranslations } from 'next-intl';
 import Head from 'next/head';
+import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import Navbar from '../components/Navbar';
 import Services from '../components/Services';
-import Projects from '../components/Projects';
-import Contact from '../components/Contact';
-import Plans from '../components/plans';
-import Testimonials from '../components/Testimonials';
-import ComparisonTable from '../components/ComparisonTable';
-import FAQ from '../components/FAQ';
 import { useEffect, useState } from 'react';
-import About from '../components/About';
+
+// Dynamic imports for components below the fold
+const Projects = dynamic(() => import('../components/Projects'), { 
+  loading: () => <div className="h-32 bg-gray-100 animate-pulse rounded-lg"></div> 
+});
+const Contact = dynamic(() => import('../components/Contact'), { 
+  loading: () => <div className="h-32 bg-gray-100 animate-pulse rounded-lg"></div> 
+});
+const Plans = dynamic(() => import('../components/plans'), { 
+  loading: () => <div className="h-32 bg-gray-100 animate-pulse rounded-lg"></div> 
+});
+const Testimonials = dynamic(() => import('../components/Testimonials'), { 
+  loading: () => <div className="h-32 bg-gray-100 animate-pulse rounded-lg"></div> 
+});
+const ComparisonTable = dynamic(() => import('../components/ComparisonTable'), { 
+  loading: () => <div className="h-32 bg-gray-100 animate-pulse rounded-lg"></div> 
+});
+const FAQ = dynamic(() => import('../components/FAQ'), { 
+  loading: () => <div className="h-32 bg-gray-100 animate-pulse rounded-lg"></div> 
+});
+const About = dynamic(() => import('../components/About'), { 
+  loading: () => <div className="h-32 bg-gray-100 animate-pulse rounded-lg"></div> 
+});
 
 const Home = ({ locale }: { locale?: string }) => {
   const t = useTranslations();
@@ -105,9 +123,16 @@ const Home = ({ locale }: { locale?: string }) => {
       {/* <Testimonials /> */}
       {/* HERO SECTION */}
       <section className="relative flex items-center justify-center min-h-[60vh] w-full overflow-hidden bg-gradient-to-br from-blue-100 to-blue-300">
-        <div className="absolute inset-0 bg-cover bg-center opacity-60" style={{ backgroundImage: 'url("/kitchen.jpg")' }} />
-        <div className="absolute inset-0 bg-black bg-opacity-40" />
-        <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4 py-24">
+        <Image
+          src="/kitchen.jpg"
+          alt="Smart Home Kitchen"
+          fill
+          className="object-cover opacity-60"
+          priority
+          quality={60}
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40 z-10" />
+        <div className="relative z-20 flex flex-col items-center justify-center text-center text-white px-4 py-24">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg text-blue-50">{t('title')}</h1>
           <p className="text-2xl md:text-3xl mb-8 font-medium text-blue-100 drop-shadow">{t('subtitle')}</p>
           <a
