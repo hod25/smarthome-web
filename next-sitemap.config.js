@@ -4,7 +4,8 @@ module.exports = {
   generateRobotsTxt: true,
   changefreq: 'weekly',
   priority: 0.7,
-  sitemapSize: 5000,
+  sitemapSize: 50000, // הגדלת הגודל כדי למנוע פיצול
+  generateIndexSitemap: false, // ביטול index sitemap
   exclude: ['/server-sitemap.xml'],
   additionalPaths: async (config) => [
     await config.transform(config, '/'),
