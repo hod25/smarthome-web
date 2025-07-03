@@ -1,11 +1,10 @@
 {
   "name": "smart-home-business",
-  "version": "2.8.0",
+  "version": "3.0.0",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next-sitemap",
+    "build": "next build",
     "start": "next start",
-    "postbuild": "next-sitemap",
     "analyze": "ANALYZE=true next build",
     "analyze:server": "BUNDLE_ANALYZE=server next build",
     "analyze:browser": "BUNDLE_ANALYZE=browser next build"

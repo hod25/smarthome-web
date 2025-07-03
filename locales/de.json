@@ -37,11 +37,13 @@
   },
   "contact": {
     "title": "Kontakt",
+    "desc": "Wir freuen uns, Sie für eine kostenlose Beratung, ein Angebot oder Fragen zu kontaktieren! Hinterlassen Sie Ihre Daten und wir melden uns schnellstmöglich.",
     "name": "Name",
     "email": "E-Mail",
     "phone": "Telefon",
     "message": "Nachricht",
     "send": "Nachricht senden",
+    "success": "Ihre Nachricht wurde erfolgreich gesendet! Wir melden uns in Kürze bei Ihnen.",
     "formTitle": "Hinterlassen Sie Ihre Daten",
     "formSubtitle": "Unser Vertreter wird sich so schnell wie möglich mit Ihnen in Verbindung setzen",
     "choosePackage": "Paket auswählen",

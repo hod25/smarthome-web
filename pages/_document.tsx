@@ -14,21 +14,26 @@ export default function Document() {
         <link rel="alternate icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
         
-        {/* הסרת preload הכבד */}
-        {/* <link rel="preload" href="/circle.png" as="image" type="image/png" /> */}
+        {/* DNS prefetch לשיפור ביצועים */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         
-        {/* Canonical */}
+        {/* Canonical URL */}
         <link rel="canonical" href="https://smarthome.7112000.xyz" />
         
         {/* Google Site Verification */}
         <meta name="google-site-verification" content="e52777fdb6df9832" />
         
-        {/* Open Graph */}
+        {/* Additional SEO Meta Tags */}
+        <meta name="theme-color" content="#1f2937" />
+        <meta name="format-detection" content="telephone=no" />
+        
+        {/* Open Graph Protocol */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Smart Home Israel" />
         <meta property="og:locale" content="he_IL" />
+        <meta property="og:locale:alternate" content="en_US" />
+        <meta property="og:locale:alternate" content="de_DE" />
         
         {/* Schema.org structured data */}
         <script
